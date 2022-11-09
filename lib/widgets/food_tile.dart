@@ -6,7 +6,7 @@ class FoodTile extends StatelessWidget {
   final bool isAvailable;
   final String shortDescription;
   final double foodPrice;
-  final bool isCurrType;
+  final bool? isCurrType;
 
   const FoodTile({
     super.key,
@@ -14,13 +14,13 @@ class FoodTile extends StatelessWidget {
     required this.isAvailable,
     required this.shortDescription,
     required this.foodPrice,
-    required this.isCurrType,
+    this.isCurrType,
   });
 
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: isCurrType,
+      visible: isCurrType ?? true,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.sp),
