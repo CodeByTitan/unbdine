@@ -3,8 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../utils/app_constant.dart';
-import '../c_dashboard/dashboard_screen.dart';
+import 'package:unbdine/c_dashboard/dashboard_screen.dart';
+import 'package:unbdine/utils/app_constant.dart';
+
 
 class SplashScreen extends StatefulHookConsumerWidget {
   const SplashScreen({
