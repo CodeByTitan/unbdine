@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/search_class.dart';
 import '../../services/greetings.dart';
 import '../../utils/app_constant.dart';
-import '../../data/dummy_data.dart';
 import './dashboard_drawer.dart';
 import './dashboard_body.dart';
 
@@ -25,19 +23,6 @@ class DashboardScaffold extends StatelessWidget {
           'Good ${greeting()} user!',
         ),
         centerTitle: false,
-        actions: [
-          IconButton(
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: FoodSearchDelegate(
-                  foodData,
-                ),
-              );
-            },
-            icon: const Icon(Icons.search),
-          ),
-        ],
         leading: Builder(
           builder: (BuildContext context) {
             return Padding(
@@ -72,7 +57,68 @@ class DashboardScaffold extends StatelessWidget {
         userAvatar: '',
         userName: '',
       ),
-      body: const DashboardBody(),
+      body: const DashBoardBody(),
+      /* ListView(
+        children: const [
+          ExpansionTileCard(
+            title: 'Breakfast',
+            items: ['items1', 'items2', 'items3'],
+          ),
+          ExpansionTileCard(
+            title: 'Grill',
+            items: ['items1', 'items2', 'items3'],
+          ),
+          ExpansionTileCard(
+            title: 'Dinner',
+            items: ['items1', 'items2', 'items3'],
+          ),
+        ],
+      ), */
+    );
+  }
+}
+
+class ExpansionTileCard extends StatelessWidget {
+  const ExpansionTileCard({
+    Key? key,
+    required this.title,
+    required this.items,
+  }) : super(key: key);
+
+  final String title;
+  final List<String> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Container(
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(
+            Radius.circular(8.0),
+          ),
+          color: AppConstant.secondaryColor,
+        ),
+        padding: const EdgeInsets.all(20.0),
+        child: ExpansionTile(
+          backgroundColor: AppConstant.secondaryColor,
+          title: Text(title),
+          children: [
+            ListView.builder(
+              itemCount: items.length,
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(
+                    items[index],
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
