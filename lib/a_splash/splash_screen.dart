@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:unbdine/b_authentication/authentication_screen.dart';
 import 'package:unbdine/utils/app_constant.dart';
+
 
 class SplashScreen extends StatefulHookConsumerWidget {
   const SplashScreen({
