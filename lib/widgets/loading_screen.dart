@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:unbdine/utils/app_constant.dart';
 
 class LoadingScreen extends StatelessWidget {
@@ -9,13 +8,6 @@ class LoadingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: AppConstant.trans,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark,
-      ),
-    );
     return Scaffold(
       body: Container(
         color: AppConstant.backgroundColor,

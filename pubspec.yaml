@@ -8,6 +8,9 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.2 <3.0.0'
 
+dependency_overrides:
+  firebase_core_platform_interface: 4.5.1
+
 dependencies:
   flutter:
     sdk: flutter
@@ -21,9 +24,10 @@ dependencies:
   flutter_phoenix: ^1.1.0
   hooks_riverpod: ^2.1.1
   package_info_plus: ^1.4.3+1
-  # firebase_auth: ^3.0.1
-  # firebase_core: ^1.4.0
-  # firebase_auth_oauth: ^1.2.0
+  firebase_auth: any
+  firebase_core: any
+  firebase_auth_oauth: any
+  cloud_firestore: any
 
 dev_dependencies:
   flutter_test:

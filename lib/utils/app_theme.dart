@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_constant.dart';
 
 class AppTheme {
-  static final ThemeData light = ThemeData(
+  static final ThemeData dark = ThemeData(
     primaryColor: AppConstant.primaryColor,
     iconTheme: const IconThemeData(
       color: AppConstant.titlecolor,
@@ -23,13 +22,8 @@ class AppTheme {
         color: AppConstant.titlecolor,
         size: 20.sp,
       ),
-      systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: AppConstant.trans,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark,
-      ),
     ),
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     scaffoldBackgroundColor: AppConstant.backgroundColor,
     unselectedWidgetColor: AppConstant.titlecolor,
     cardColor: AppConstant.secondaryColor,
