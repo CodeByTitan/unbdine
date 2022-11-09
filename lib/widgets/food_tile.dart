@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FoodTile extends StatelessWidget {
   final String foodName;
@@ -22,28 +23,38 @@ class FoodTile extends StatelessWidget {
       visible: isCurrType,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.sp),
           border: Border.all(
-            width: 1,
+            width: 1.sp,
           ),
-          color: isAvailable ? Colors.white : Colors.grey,
+          color: isAvailable ? Colors.white : Colors.red[100],
         ),
-        margin: const EdgeInsets.only(
-          top: 5,
+        margin: EdgeInsets.only(
+          top: 5.sp,
         ),
-        height: 100,
+        height: 100.sp,
         child: Center(
           child: ListTile(
+            // TODO : food image in leading
             leading: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.black,
+                borderRadius: BorderRadius.circular(10.sp),
+                border: Border.all(),
               ),
-              width: 75,
-            ), // TODO : image
-            title: Text(foodName),
-            subtitle: Text(shortDescription),
-            trailing: Text('\$ $foodPrice'),
+              width: 75.sp,
+            ),
+            title: Text(
+              foodName,
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
+            subtitle: Text(
+              shortDescription,
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+            trailing: Text(
+              '\$ $foodPrice',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
         ),
       ),

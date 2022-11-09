@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
-import './screens/home_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import './my_app.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'unbdine',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-        // useMaterial3: true,
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  );
+  runApp(
+    Phoenix(
+      child: const ProviderScope(
+        child: MyApp(),
       ),
-      home: HomeScreen(),
-    );
-  }
+    ),
+  );
 }

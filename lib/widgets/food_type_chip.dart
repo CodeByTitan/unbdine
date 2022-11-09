@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FoodTypeChips extends StatelessWidget {
   final void Function() onTap;
@@ -16,16 +17,17 @@ class FoodTypeChips extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 100,
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.all(10),
+        width: 100.sp,
+        padding: EdgeInsets.all(10.sp),
+        margin: EdgeInsets.all(10.sp),
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30.sp),
         ),
         alignment: Alignment.center,
         child: Text(
           typeName,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ),
     );
