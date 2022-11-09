@@ -1,9 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'package:unbdine/c_dashboard/dashboard_screen.dart';
 import 'package:unbdine/utils/app_constant.dart';
 
 
@@ -29,9 +27,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       const Duration(seconds: 2),
       () {
         // user != null
+        
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => const DashboardScreen(),
+            builder: (context) => const AuthenticationScreen(),
           ),
         );
         // : Navigator.of(context).pushReplacement(
@@ -47,13 +46,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: AppConstant.trans,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark,
-      ),
-    );
     return Stack(
       children: [
         Container(

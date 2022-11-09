@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "953559945234",
+    "project_id": "unbdine",
+    "storage_bucket": "unbdine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953559945234:android:f4107db6e07d340b56c8cb",
+        "android_client_info": {
+          "package_name": "com.arsh.unbdine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953559945234-jfup80a9lc6tutk1pko3fpuk96pkne4q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arsh.unbdine",
+            "certificate_hash": "af37b9cd2f28f1d0517f6ba468b69ba1a9f81c4e"
+          }
+        },
+        {
+          "client_id": "953559945234-qceavuepkbt8kc190s361a2mqd2q2bfs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arsh.unbdine",
+            "certificate_hash": "bc3372e081687840b7bdbdc3362f5da2b4c0866f"
+          }
+        },
+        {
+          "client_id": "953559945234-p05qtpgo9skso917o3p7c0ev2v1kubj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBepeg__ftLNU_Cu5HQ0ILJ0Ug3ntZWoHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953559945234-p05qtpgo9skso917o3p7c0ev2v1kubj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953559945234:android:239b870ec14be78356c8cb",
+        "android_client_info": {
+          "package_name": "com.example.unbdine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953559945234-io3paklnaock6fpctpf8v6op576sm4nn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.unbdine",
+            "certificate_hash": "33d472bfad176ee6eff2c483fe635281ad21a29d"
+          }
+        },
+        {
+          "client_id": "953559945234-p05qtpgo9skso917o3p7c0ev2v1kubj8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBepeg__ftLNU_Cu5HQ0ILJ0Ug3ntZWoHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953559945234-p05qtpgo9skso917o3p7c0ev2v1kubj8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
