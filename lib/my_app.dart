@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import './screens/splash/splash_screen.dart';
+import 'a_splash/splash_screen.dart';
 import './utils/app_theme.dart';
 import './widgets/error_screen.dart';
 

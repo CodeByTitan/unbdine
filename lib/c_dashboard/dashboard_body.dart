@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/stacked_menu_text.dart';
-import '../../widgets/stacked_food_type_text.dart';
+import '../widgets/stacked_menu_text.dart';
+import '../widgets/stacked_food_type_text.dart';
 
 class DashBoardBody extends StatelessWidget {
   const DashBoardBody({super.key});

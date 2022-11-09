@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../services/greetings.dart';
-import '../../utils/app_constant.dart';
+import '../services/greetings.dart';
+import '../utils/app_constant.dart';
 import './dashboard_drawer.dart';
 import './dashboard_body.dart';
 
