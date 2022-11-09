@@ -4,7 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-import './dashboard_scaffold.dart';
+import 'package:unbdine/c_dashboard/dashboard_scaffold.dart';
 
 class DashboardScreen extends StatefulHookConsumerWidget {
   const DashboardScreen({super.key});

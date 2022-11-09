@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../utils/app_constant.dart';
+import 'package:unbdine/utils/app_constant.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({

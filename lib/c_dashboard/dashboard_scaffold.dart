@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../services/greetings.dart';
-import '../utils/app_constant.dart';
-import './dashboard_drawer.dart';
-import './dashboard_body.dart';
+import 'package:unbdine/services/greetings.dart';
+import 'package:unbdine/utils/app_constant.dart';
+import 'package:unbdine/c_dashboard/dashboard_drawer.dart';
+import 'package:unbdine/c_dashboard/dashboard_body.dart';
 
 class DashboardScaffold extends StatelessWidget {
   const DashboardScaffold({
