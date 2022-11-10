@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:unbdine/widgets/checkout_button.dart';
+import 'package:unbdine/widgets/dashboard_tiles.dart';
 import 'package:unbdine/widgets/stacked_menu_text.dart';
-import 'package:unbdine/widgets/stacked_food_type_text.dart';
 
-class DashBoardBody extends StatelessWidget {
+class DashBoardBody extends StatefulWidget {
   const DashBoardBody({super.key});
 
   @override
@@ -26,35 +26,32 @@ class DashBoardBody extends StatelessWidget {
         const StackedMenuText(),
       ],
     );
-  }
+  State<DashBoardBody> createState() => _DashBoardBodyState();
 }
 
-class ExpandableTile extends StatelessWidget {
-  final String text;
-  const ExpandableTile({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
+class _DashBoardBodyState extends State<DashBoardBody> {
+  List<String> foodtype = [
+    'Breakfirst',
+    'grill',
+    'Dinner',
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      flex: 1,
-      child: Stack(
-        children: [
-          Container(
-            padding: EdgeInsets.all(10.sp),
-            margin: EdgeInsets.all(10.sp),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.sp),
-              color: Theme.of(context).backgroundColor,
-            ),
+    return Stack(
+      children: [
+        ListView.builder(
+          itemCount: foodtype.length,
+          itemBuilder: (context, index) => ExpandableTile(
+            text: foodtype[index],
           ),
-          StackedFoodTypeText(
-            text: text,
-          )
-        ],
-      ),
+        ),
+        const StackedMenuText(),
+        CheckOutButton(
+          //TODO : Connect to cart UI
+          onTap: () {},
+        )
+      ],
     );
   }
 }

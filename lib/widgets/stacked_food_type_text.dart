@@ -28,9 +28,9 @@ class StackedFoodTypeText extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 20,
-              offset: const Offset(0, 1), // changes position of shadow
+              spreadRadius: 2.sp,
+              blurRadius: 20.sp,
+              offset: const Offset(0, 1),
             ),
           ],
         ),
