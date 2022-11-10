@@ -2,8 +2,8 @@ import '../classes/food_class.dart';
 
 List food = [
   [
-    'Breakfirst',
-    'assets/images/breakfirst.jpg',
+    'Breakfast',
+    'assets/images/breakfast.jpg',
     breakfast,
   ],
   [
