@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:unbdine/utils/app_constant.dart';
 
 class StackedMenuText extends StatelessWidget {
   const StackedMenuText({
@@ -28,7 +29,7 @@ class StackedMenuText extends StatelessWidget {
                 offset: const Offset(0, 1), // changes position of shadow
               ),
             ],
-            color: Theme.of(context).scaffoldBackgroundColor,
+            color: AppConstant.backgroundColor,
           ),
           alignment: Alignment.center,
           child: Text(

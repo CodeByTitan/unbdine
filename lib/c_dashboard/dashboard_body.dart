@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/widgets/checkout_button.dart';
+import 'package:unbdine/c_dashboard/cart/cart_screen.dart';
+import 'package:unbdine/widgets/custom_icon_btn.dart';
 import 'package:unbdine/widgets/dashboard_tiles.dart';
 import 'package:unbdine/widgets/stacked_menu_text.dart';
 
@@ -29,10 +30,16 @@ class _DashBoardBodyState extends State<DashBoardBody> {
           ),
         ),
         const StackedMenuText(),
-        CheckOutButton(
-          //TODO : Connect to cart UI
-          onTap: () {},
-        )
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: CustomIconButton(
+            buttontext: 'Check Out',
+            buttonIcon: const Icon(Icons.shopping_cart_checkout),
+            buttonFunction: () {
+              Navigator.of(context).pushNamed(CartScreen.routeName);
+            },
+          ),
+        ),
       ],
     );
   }
