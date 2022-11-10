@@ -19,7 +19,6 @@ class AppTheme {
       ),
       backgroundColor: AppConstant.backgroundColor,
       elevation: 0,
-      centerTitle: true,
       iconTheme: IconThemeData(
         color: AppConstant.titlecolor,
         size: 20.sp,

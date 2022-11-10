@@ -7,6 +7,25 @@ class DashBoardBody extends StatefulWidget {
   const DashBoardBody({super.key});
 
   @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Column(
+          children: const [
+            ExpandableTile(
+              text: 'Breakfast',
+            ),
+            ExpandableTile(
+              text: 'Grill',
+            ),
+            ExpandableTile(
+              text: 'Dinner',
+            ),
+          ],
+        ),
+        const StackedMenuText(),
+      ],
+    );
   State<DashBoardBody> createState() => _DashBoardBodyState();
 }
 
