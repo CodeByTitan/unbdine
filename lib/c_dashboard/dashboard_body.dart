@@ -13,7 +13,7 @@ class DashBoardBody extends StatelessWidget {
         Column(
           children: const [
             ExpandableTile(
-              text: 'Breakfirst',
+              text: 'Breakfast',
             ),
             ExpandableTile(
               text: 'Grill',

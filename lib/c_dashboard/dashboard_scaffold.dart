@@ -5,7 +5,6 @@ import 'package:unbdine/utils/app_constant.dart';
 import 'package:unbdine/c_dashboard/dashboard_drawer.dart';
 import 'package:unbdine/c_dashboard/dashboard_body.dart';
 
-
 class DashboardScaffold extends StatelessWidget {
   const DashboardScaffold({
     Key? key,
@@ -58,72 +57,7 @@ class DashboardScaffold extends StatelessWidget {
         userAvatar: '',
         userName: '',
       ),
-
       body: const DashBoardBody(),
-      /* ListView(
-
-        children: const [
-          ExpansionTileCard(
-            title: 'Breakfast',
-            items: ['items1', 'items2', 'items3'],
-          ),
-          ExpansionTileCard(
-            title: 'Grill',
-            items: ['items1', 'items2', 'items3'],
-          ),
-          ExpansionTileCard(
-            title: 'Dinner',
-            items: ['items1', 'items2', 'items3'],
-          ),
-        ],
-
-      ), */
-
-    );
-  }
-}
-
-class ExpansionTileCard extends StatelessWidget {
-  const ExpansionTileCard({
-    Key? key,
-    required this.title,
-    required this.items,
-  }) : super(key: key);
-
-  final String title;
-  final List<String> items;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(8.0),
-          ),
-          color: AppConstant.secondaryColor,
-        ),
-        padding: const EdgeInsets.all(20.0),
-        child: ExpansionTile(
-          backgroundColor: AppConstant.secondaryColor,
-          title: Text(title),
-          children: [
-            ListView.builder(
-              itemCount: items.length,
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(
-                    items[index],
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
