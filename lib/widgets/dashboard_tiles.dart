@@ -1,14 +1,16 @@
+// import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unbdine/widgets/stacked_food_type_text.dart';
 
-class ExpandableTile extends StatelessWidget {
+class DashBoardTile extends StatelessWidget {
   final String text;
-  const ExpandableTile({
+  final String imagePath;
+  const DashBoardTile({
     Key? key,
     required this.text,
+    required this.imagePath,
   }) : super(key: key);
-// TODO : Linear Gradient Effect
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,11 +18,37 @@ class ExpandableTile extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            padding: EdgeInsets.all(10.sp),
+            // padding: EdgeInsets.all(10.sp),
             margin: EdgeInsets.all(10.sp),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.sp),
               color: Theme.of(context).backgroundColor,
+              // gradient: LinearGradient(
+              //   begin: Alignment.topRight,
+              //   end: Alignment.bottomLeft,
+              //   colors: [
+              //     Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+              //         .withOpacity(0.5),
+              //     Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+              //         .withOpacity(1.0),
+              //   ],
+              // ),
+            ),
+            child: Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15.sp),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: Image(
+                      fit: BoxFit.fitWidth,
+                      image: AssetImage(
+                        imagePath,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           StackedFoodTypeText(
