@@ -11,10 +11,10 @@ class DashBoardBody extends StatefulWidget {
 }
 
 class _DashBoardBodyState extends State<DashBoardBody> {
-  List<String> foodtype = [
-    'Breakfirst',
-    'grill',
-    'Dinner',
+  List foodtype = [
+    ['Breakfirst', 'assets/images/breakfirst.jpg'],
+    ['grill', 'assets/images/grill.jpg'],
+    ['Dinner', 'assets/images/dinner.jpg'],
   ];
 
   @override
@@ -23,8 +23,9 @@ class _DashBoardBodyState extends State<DashBoardBody> {
       children: [
         ListView.builder(
           itemCount: foodtype.length,
-          itemBuilder: (context, index) => ExpandableTile(
-            text: foodtype[index],
+          itemBuilder: (_, i) => DashBoardTile(
+            text: foodtype[i][0],
+            imagePath: foodtype[i][1],
           ),
         ),
         const StackedMenuText(),
