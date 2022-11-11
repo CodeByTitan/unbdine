@@ -3,7 +3,7 @@ import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:unbdine/c_dashboard/dashboard_screen.dart';
+import 'package:unbdine/screens/dashboard/dashboard_screen.dart';
 
 class AuthenticationScreen extends StatefulHookConsumerWidget {
   const AuthenticationScreen({super.key});

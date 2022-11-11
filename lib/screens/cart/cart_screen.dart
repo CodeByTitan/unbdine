@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unbdine/utils/app_constant.dart';
 import 'package:unbdine/widgets/back_screen_button.dart';
 import 'package:unbdine/widgets/custom_icon_btn.dart';
@@ -29,11 +28,11 @@ class CartScreen extends StatelessWidget {
                   return Center(
                     child: Container(
                       margin: const EdgeInsets.only(right: 8),
-                      width: 150.sp,
-                      height: 180.sp,
+                      width: 150,
+                      height: 180,
                       decoration: BoxDecoration(
                         color: AppConstant.primaryColor,
-                        borderRadius: BorderRadius.circular(8.sp),
+                        borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                   );
