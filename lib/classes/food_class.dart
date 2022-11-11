@@ -5,7 +5,6 @@ class Food {
   final bool isAvailable;
   final String foodImgUrl;
   final String shortDescription;
-  bool isFavorite;
 
   Food({
     required this.id,
@@ -14,6 +13,5 @@ class Food {
     required this.isAvailable,
     required this.foodImgUrl,
     required this.shortDescription,
-    this.isFavorite = false,
   });
 }

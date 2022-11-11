@@ -39,54 +39,57 @@ class DashBoardTile extends StatelessWidget {
             ),
           ),
           // Navigation
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 50,
-              margin: const EdgeInsets.only(
-                left: 15,
-                right: 15,
-                top: 10,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
+          GestureDetector(
+            onTap: onClicked,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 50,
+                margin: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                  top: 10,
                 ),
-                gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [
-                    Colors.black,
-                    Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-                        .withOpacity(0.7),
-                    Colors.black45,
-                  ],
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: const [
-                      SizedBox(
-                        width: 60,
-                      ),
-                      Text(
-                        'Explore',
-                        textScaleFactor: 1.5,
-                      ),
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  ),
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Colors.black,
+                      Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+                          .withOpacity(0.7),
+                      Colors.black45,
                     ],
                   ),
-                  Row(
-                    children: const [
-                      Icon(Icons.keyboard_arrow_down),
-                      SizedBox(
-                        width: 30,
-                      ),
-                    ],
-                  )
-                ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: const [
+                        SizedBox(
+                          width: 60,
+                        ),
+                        Text(
+                          'Explore',
+                          textScaleFactor: 1.5,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Icon(Icons.keyboard_arrow_down),
+                        SizedBox(
+                          width: 30,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),

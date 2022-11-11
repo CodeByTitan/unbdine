@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/screens/cart/cart_screen.dart';
 import 'package:unbdine/data/dummy_data.dart';
+import 'package:unbdine/screens/cart/cart_screen.dart';
+import 'package:unbdine/screens/pages/main_menu.dart';
+import 'package:unbdine/screens/pages/sub_menu_builder.dart';
 import 'package:unbdine/widgets/custom_icon_btn.dart';
-import 'package:unbdine/widgets/dashboard_tile.dart';
-import 'package:unbdine/widgets/stacked_menu_text.dart';
 
 class DashBoardBody extends StatefulWidget {
   const DashBoardBody({super.key});
@@ -12,40 +12,95 @@ class DashBoardBody extends StatefulWidget {
   State<DashBoardBody> createState() => _DashBoardBodyState();
 }
 
+PageController pageController = PageController(
+  initialPage: 0,
+  keepPage: true,
+);
+
 class _DashBoardBodyState extends State<DashBoardBody> {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        // TODO
         PageView(
+          controller: pageController,
+          scrollDirection: Axis.vertical,
           children: [
-            // homepage
-            Stack(
-              children: [
-                Column(
-                  children: [
-                    DashBoardTile(
-                      text: food[0][0],
-                      imagePath: food[0][1],
-                      onClicked: () {},
-                    ),
-                    DashBoardTile(
-                      text: food[1][0],
-                      imagePath: food[1][1],
-                      onClicked: () {},
-                    ),
-                    DashBoardTile(
-                      text: food[2][0],
-                      imagePath: food[2][1],
-                      onClicked: () {},
-                    ),
-                  ],
-                ),
-                const StackedMenuText(),
-              ],
+            MainMenu(
+              toBreakfast: () {
+                pageController.animateToPage(
+                  1,
+                  duration: const Duration(
+                    seconds: 1,
+                  ),
+                  curve: Curves.easeInOut,
+                );
+              },
+              toGrill: () {
+                pageController.animateToPage(
+                  2,
+                  duration: const Duration(
+                    seconds: 1,
+                  ),
+                  curve: Curves.easeInOut,
+                );
+              },
+              toDinner: () {
+                pageController.animateToPage(
+                  3,
+                  duration: const Duration(
+                    seconds: 1,
+                  ),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            SubMenuBuilder(
+              subMenuIndex: 0,
+              menu: food,
+              submenu: breakfast,
+              backToMenu: () {
+                pageController.animateToPage(
+                  0,
+                  duration: const Duration(
+                    seconds: 1,
+                  ),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            SubMenuBuilder(
+              subMenuIndex: 1,
+              menu: food,
+              submenu: grill,
+              backToMenu: () {
+                pageController.animateToPage(
+                  0,
+                  duration: const Duration(
+                    seconds: 1,
+                  ),
+                  curve: Curves.easeInOut,
+                );
+              },
+            ),
+            SubMenuBuilder(
+              subMenuIndex: 2,
+              menu: food,
+              submenu: dinner,
+              backToMenu: () {
+                pageController.animateToPage(
+                  0,
+                  duration: const Duration(
+                    seconds: 1,
+                  ),
+                  curve: Curves.easeInOut,
+                );
+              },
             ),
           ],
         ),
+        // Check out Button
         Align(
           alignment: Alignment.bottomCenter,
           child: CustomIconButton(
