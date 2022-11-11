@@ -17,12 +17,12 @@ PageController pageController = PageController(
   keepPage: true,
 );
 
+// TODO : a reusable function for page switching
 class _DashBoardBodyState extends State<DashBoardBody> {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // TODO
         PageView(
           controller: pageController,
           scrollDirection: Axis.vertical,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unbdine/classes/food_class.dart';
+import 'package:unbdine/utils/app_constant.dart';
 import 'package:unbdine/widgets/food_tile.dart';
 
 class SubMenuBuilder extends StatelessWidget {
@@ -25,11 +26,12 @@ class SubMenuBuilder extends StatelessWidget {
       child: */
         Stack(
       children: [
+        // Food List
         Transform(
           transform: Matrix4.skewY(-0.2),
           child: Container(
             margin: const EdgeInsets.only(
-              top: 95,
+              top: 100,
               left: 15,
               right: 15,
             ),
@@ -45,6 +47,7 @@ class SubMenuBuilder extends StatelessWidget {
             ),
           ),
         ),
+        // Header Image
         Align(
           alignment: Alignment.topCenter,
           child: Transform(
@@ -84,10 +87,18 @@ class SubMenuBuilder extends StatelessWidget {
           child: GestureDetector(
             onTap: backToMenu,
             child: Container(
-              // height: 50,
               width: 100,
-              color: Colors.blue,
               padding: const EdgeInsets.all(5),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    AppConstant.primaryColor,
+                    Colors.transparent,
+                  ],
+                ),
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
