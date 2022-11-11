@@ -7,7 +7,7 @@ List food = [
     breakfast,
   ],
   [
-    'grill',
+    'Grill',
     'assets/images/grill.jpg',
     grill,
   ],
