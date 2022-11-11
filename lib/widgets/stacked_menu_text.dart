@@ -25,10 +25,10 @@ class StackedMenuText extends StatelessWidget {
                 color: Colors.black.withOpacity(0.2),
                 spreadRadius: 2,
                 blurRadius: 20,
-                offset: const Offset(0, 1), // changes position of shadow
+                offset: const Offset(0, 1),
               ),
             ],
-            color: AppConstant.backgroundColor,
+            color: AppConstant.primaryColor,
           ),
           alignment: Alignment.center,
           child: const Text(
@@ -36,6 +36,7 @@ class StackedMenuText extends StatelessWidget {
             textScaleFactor: 1.3,
             style: TextStyle(
               letterSpacing: 35,
+              color: AppConstant.backgroundColor,
             ),
           ),
         ),

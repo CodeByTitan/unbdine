@@ -18,6 +18,7 @@ class CartScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Column(
           children: [
+            // purchased item list
             Expanded(
               flex: 3,
               child: ListView.builder(
@@ -39,12 +40,13 @@ class CartScreen extends StatelessWidget {
                 },
               ),
             ),
+            // stats
             Expanded(
               flex: 2,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,6 +66,7 @@ class CartScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                    // payment method
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -77,6 +80,7 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // items list
             Expanded(
               flex: 3,
               child: Padding(
@@ -108,6 +112,7 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // proceed to pay button
             Expanded(
               flex: 1,
               child: Align(
@@ -115,6 +120,7 @@ class CartScreen extends StatelessWidget {
                 child: CustomIconButton(
                   buttontext: 'Proceed to Pay',
                   buttonIcon: const Icon(Icons.payment),
+                  // TODO : pay function
                   buttonFunction: () {},
                 ),
               ),
