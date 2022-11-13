@@ -107,7 +107,9 @@ class _DashBoardBodyState extends State<DashBoardBody> {
             buttontext: 'Check Out',
             buttonIcon: const Icon(Icons.shopping_cart_checkout),
             buttonFunction: () {
-              Navigator.of(context).pushNamed(CartScreen.routeName);
+              Navigator.of(context).pushNamed(
+                CartScreen.routeName,
+              );
             },
           ),
         ),

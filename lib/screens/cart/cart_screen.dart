@@ -12,7 +12,9 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const BackScreenButton(),
-        title: const Text('Backpack/Cart'),
+        title: const Text(
+          'Backpack/Cart',
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),

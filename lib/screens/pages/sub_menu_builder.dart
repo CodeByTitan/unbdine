@@ -102,8 +102,12 @@ class SubMenuBuilder extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: const [
-                  Icon(Icons.navigate_before),
-                  Text('Menu'),
+                  Icon(
+                    Icons.navigate_before,
+                  ),
+                  Text(
+                    'Menu',
+                  ),
                 ],
               ),
             ),
