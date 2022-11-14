@@ -12,7 +12,7 @@ class BackScreenButton extends StatelessWidget {
         Navigator.of(context).pop();
       },
       icon: const Icon(
-        Icons.keyboard_arrow_left_rounded,
+        Icons.arrow_back,
       ),
     );
   }
