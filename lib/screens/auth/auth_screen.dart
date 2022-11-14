@@ -3,7 +3,7 @@ import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:unbdine/screens/dashboard/dashboard_screen.dart';
+import 'package:unbdine/screens/home/home.dart';
 
 class AuthenticationScreen extends StatefulHookConsumerWidget {
   const AuthenticationScreen({super.key});
@@ -67,7 +67,7 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(),
+                        builder: (context) => const HomeScreen(),
                       ),
                     );
                   },

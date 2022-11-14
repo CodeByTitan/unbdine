@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:unbdine/classes/food_class.dart';
-import 'package:unbdine/utils/app_constant.dart';
 import 'package:unbdine/widgets/food_tile.dart';
 
 class SubMenuBuilder extends StatelessWidget {
@@ -89,12 +88,12 @@ class SubMenuBuilder extends StatelessWidget {
             child: Container(
               width: 100,
               padding: const EdgeInsets.all(5),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    AppConstant.primaryColor,
+                    Theme.of(context).primaryColor,
                     Colors.transparent,
                   ],
                 ),

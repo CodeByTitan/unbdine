@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/utils/app_constant.dart';
 
 class StackedMenuText extends StatelessWidget {
   const StackedMenuText({
@@ -28,7 +27,6 @@ class StackedMenuText extends StatelessWidget {
                 offset: const Offset(0, 1),
               ),
             ],
-            color: AppConstant.primaryColor,
           ),
           alignment: Alignment.center,
           child: const Text(
@@ -36,7 +34,6 @@ class StackedMenuText extends StatelessWidget {
             textScaleFactor: 1.3,
             style: TextStyle(
               letterSpacing: 35,
-              color: AppConstant.backgroundColor,
             ),
           ),
         ),

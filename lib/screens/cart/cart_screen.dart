@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/utils/app_constant.dart';
 import 'package:unbdine/widgets/back_screen_button.dart';
 import 'package:unbdine/widgets/custom_icon_btn.dart';
 
@@ -32,7 +31,6 @@ class CartScreen extends StatelessWidget {
                       width: 150,
                       height: 180,
                       decoration: BoxDecoration(
-                        color: AppConstant.primaryColor,
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),

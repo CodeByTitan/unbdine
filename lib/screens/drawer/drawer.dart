@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:unbdine/utils/app_constant.dart';
 import 'package:unbdine/widgets/custom_divider.dart';
 
-class DashboardDrawer extends StatelessWidget {
-  const DashboardDrawer({
+class DefaultDrawer extends StatelessWidget {
+  const DefaultDrawer({
     Key? key,
     required this.appName,
     required this.appVersion,
@@ -27,21 +24,19 @@ class DashboardDrawer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
-                height: 10.h,
+              const SizedBox(
+                height: 10,
               ),
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: CircleAvatar(
-                  radius: 30.r,
-                  backgroundColor: AppConstant.primaryColor,
+                  radius: 30,
                   backgroundImage:
                       userAvatar.isNotEmpty ? NetworkImage(userAvatar) : null,
                   child: userAvatar.isEmpty
-                      ? Icon(
+                      ? const Icon(
                           Icons.person_rounded,
-                          color: AppConstant.backgroundColor,
-                          size: 25.sp,
+                          size: 25,
                         )
                       : null,
                 ),
@@ -53,28 +48,25 @@ class DashboardDrawer extends StatelessWidget {
                     softWrap: true,
                     style: Theme.of(context).textTheme.headline4!.copyWith(
                           fontWeight: FontWeight.bold,
-                          color: AppConstant.titlecolor,
                         ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 10.h,
+              const SizedBox(
+                height: 10,
               ),
               const CustomDivider(),
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.history_rounded,
-                  color: AppConstant.titlecolor.withOpacity(0.8),
                 ),
                 title: Text(
                   'Order history',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
@@ -82,15 +74,13 @@ class DashboardDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.check_circle_rounded,
-                  color: AppConstant.titlecolor.withOpacity(0.8),
                 ),
                 title: Text(
                   'Saved meals',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
@@ -98,15 +88,13 @@ class DashboardDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.payment_rounded,
-                  color: AppConstant.titlecolor.withOpacity(0.8),
                 ),
                 title: Text(
                   'Payment methods',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
@@ -115,15 +103,13 @@ class DashboardDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.info_rounded,
-                  color: AppConstant.titlecolor.withOpacity(0.8),
                 ),
                 title: Text(
                   'Terms and conditions',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
@@ -131,15 +117,13 @@ class DashboardDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.feedback_rounded,
-                  color: AppConstant.titlecolor.withOpacity(0.8),
                 ),
                 title: Text(
                   'Feedback',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
@@ -147,54 +131,48 @@ class DashboardDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.star_rounded,
-                  color: AppConstant.titlecolor.withOpacity(0.8),
                 ),
                 title: Text(
                   'Rate us',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
               const Spacer(),
               Card(
                 clipBehavior: Clip.hardEdge,
-                color: AppConstant.backgroundColor,
                 elevation: 0,
                 child: ListTile(
                   onTap: () {
                     Navigator.of(context).pop();
                   },
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.logout_rounded,
-                    color: AppConstant.titlecolor.withOpacity(0.8),
                   ),
                   title: Text(
                     'Logout',
                     style: Theme.of(context).textTheme.headline5!.copyWith(
                           fontWeight: FontWeight.bold,
-                          color: AppConstant.titlecolor,
                         ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 5.h,
+              const SizedBox(
+                height: 5,
               ),
               Center(
                 child: Text(
                   '$appName v$appVersion',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: AppConstant.titlecolor,
                       ),
                 ),
               ),
-              SizedBox(
-                height: 5.h,
+              const SizedBox(
+                height: 5,
               ),
             ],
           ),
