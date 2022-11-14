@@ -90,7 +90,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           userAvatar: '',
           userName: '',
         ),
-        body: const DashBoardBody(),
+        body: const Body(),
       ),
     );
   }
