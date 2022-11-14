@@ -36,7 +36,7 @@ class StackedFoodTypeText extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           text,
-          style: Theme.of(context).textTheme.displayMedium,
+          textScaleFactor: 1.3,
         ),
       ),
     );

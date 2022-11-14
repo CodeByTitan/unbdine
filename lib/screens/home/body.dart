@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:unbdine/data/dummy_data.dart';
 import 'package:unbdine/screens/cart/cart_screen.dart';
-import 'package:unbdine/screens/pages/main_menu.dart';
-import 'package:unbdine/screens/pages/sub_menu_builder.dart';
+import 'package:unbdine/screens/home/main_menu.dart';
+import 'package:unbdine/screens/home/sub_menu_builder.dart';
 import 'package:unbdine/widgets/custom_icon_btn.dart';
 
-class DashBoardBody extends StatefulWidget {
-  const DashBoardBody({super.key});
+class Body extends StatefulWidget {
+  const Body({super.key});
 
   @override
-  State<DashBoardBody> createState() => _DashBoardBodyState();
+  State<Body> createState() => _BodyState();
 }
 
 PageController pageController = PageController(
@@ -18,7 +18,7 @@ PageController pageController = PageController(
 );
 
 // TODO : a reusable function for page switching
-class _DashBoardBodyState extends State<DashBoardBody> {
+class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     return Stack(

@@ -2,11 +2,11 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:unbdine/widgets/stacked_food_type_text.dart';
 
-class DashBoardTile extends StatelessWidget {
+class MainMenuTile extends StatelessWidget {
   final String text;
   final String imagePath;
   final VoidCallback onClicked;
-  const DashBoardTile({
+  const MainMenuTile({
     Key? key,
     required this.text,
     required this.imagePath,
@@ -82,12 +82,14 @@ class DashBoardTile extends StatelessWidget {
                     ),
                     Row(
                       children: const [
-                        Icon(Icons.keyboard_arrow_down),
+                        Icon(
+                          Icons.keyboard_arrow_down,
+                        ),
                         SizedBox(
                           width: 30,
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),

@@ -20,7 +20,6 @@ dependencies:
   fluttertoast: ^8.1.1
   lottie: ^1.4.3
   google_fonts: ^3.0.1
-  flutter_screenutil: ^5.6.0
   flutter_phoenix: ^1.1.0
   hooks_riverpod: ^2.1.1
   package_info_plus: ^1.4.3+1
