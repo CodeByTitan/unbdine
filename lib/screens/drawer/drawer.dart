@@ -16,6 +16,9 @@ class DefaultDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const Widget divSizedBox = SizedBox(
+      height: 5,
+    );
     return Drawer(
       child: SafeArea(
         child: Scaffold(
@@ -41,6 +44,7 @@ class DefaultDrawer extends StatelessWidget {
           ),
           body: Column(
             children: [
+              divSizedBox,
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -52,6 +56,7 @@ class DefaultDrawer extends StatelessWidget {
                   'Order history',
                 ),
               ),
+              divSizedBox,
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -63,6 +68,7 @@ class DefaultDrawer extends StatelessWidget {
                   'Saved meals',
                 ),
               ),
+              divSizedBox,
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -74,6 +80,7 @@ class DefaultDrawer extends StatelessWidget {
                   'Payment methods',
                 ),
               ),
+              divSizedBox,
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -85,6 +92,7 @@ class DefaultDrawer extends StatelessWidget {
                   'Terms and conditions',
                 ),
               ),
+              divSizedBox,
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -96,6 +104,7 @@ class DefaultDrawer extends StatelessWidget {
                   'Feedback',
                 ),
               ),
+              divSizedBox,
               ListTile(
                 onTap: () {
                   Navigator.of(context).pop();
@@ -108,33 +117,26 @@ class DefaultDrawer extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              Card(
-                clipBehavior: Clip.hardEdge,
-                elevation: 0,
-                child: ListTile(
-                  onTap: () {
-                    Navigator.of(context).pop();
-                  },
-                  leading: const Icon(
-                    Icons.logout_rounded,
-                  ),
-                  title: const Text(
-                    'Logout',
-                  ),
+              ListTile(
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+                leading: Icon(
+                  Icons.logout_rounded,
+                  color: Theme.of(context).errorColor,
+                ),
+                title: const Text(
+                  'Logout',
                 ),
               ),
-              const Divider(),
-              const SizedBox(
-                height: 5,
-              ),
+              divSizedBox,
               Center(
                 child: Text(
                   '$appName v$appVersion',
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
-              const SizedBox(
-                height: 5,
-              ),
+              divSizedBox,
             ],
           ),
         ),

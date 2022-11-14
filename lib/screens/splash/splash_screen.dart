@@ -50,7 +50,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
           width: 1,
           decoration: const BoxDecoration(),
         ),
-        Center(
+        const Center(
           child: FlutterLogo(
             size: 100,
           ),

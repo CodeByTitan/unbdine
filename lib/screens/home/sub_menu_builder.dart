@@ -74,6 +74,9 @@ class SubMenuBuilder extends StatelessWidget {
                   alignment: Alignment.bottomLeft,
                   child: Text(
                     menu[subMenuIndex][0],
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                        ),
                   ),
                 ),
               ],
@@ -92,8 +95,8 @@ class SubMenuBuilder extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Theme.of(context).primaryColor,
-                    Colors.transparent,
+                    Theme.of(context).primaryColorDark,
+                    Colors.transparent
                   ],
                 ),
               ),

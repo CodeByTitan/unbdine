@@ -49,9 +49,6 @@ class FoodTile extends StatelessWidget {
                     height: 120,
                     width: 120,
                     decoration: const BoxDecoration(
-                      /* borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(120),
-                  ), */
                       color: Colors.black,
                     ),
                   ),
@@ -66,15 +63,17 @@ class FoodTile extends StatelessWidget {
                     children: [
                       Text(
                         foodName,
-                        style: Theme.of(context).textTheme.bodyLarge,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: Colors.white,
+                            ),
                       ),
                       Text(
                         '\$ $foodPrice',
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                       Text(
                         shortDescription,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ],
                   ),
@@ -87,9 +86,9 @@ class FoodTile extends StatelessWidget {
               child: IconButton(
                 // TODO: add to cart function
                 onPressed: () {},
-                icon: const Icon(
+                icon: Icon(
                   Icons.add_shopping_cart,
-                  size: 40,
+                  color: Theme.of(context).iconTheme.color,
                 ),
               ),
             ),

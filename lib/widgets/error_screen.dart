@@ -14,25 +14,23 @@ class ErrorScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Material(
-                child: SizedBox(
-                  width: 0.6,
-                  height: 35,
-                  child: ElevatedButton(
-                    child: const Text('Try Again'),
-                    onPressed: () {
-                      Phoenix.rebirth(context);
-                    },
-                  ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Material(
+              child: SizedBox(
+                width: 0.6,
+                height: 35,
+                child: ElevatedButton(
+                  child: const Text('Try Again'),
+                  onPressed: () {
+                    Phoenix.rebirth(context);
+                  },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

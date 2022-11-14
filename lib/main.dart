@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:unbdine/screens/splash/splash_screen.dart';
 import 'package:unbdine/screens/cart/cart_screen.dart';
+import 'package:unbdine/themes/color_themes.dart';
 import 'package:unbdine/widgets/error_screen.dart';
 
 Future<void> main() async {
@@ -35,6 +36,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
+      theme: lightTheme(),
+      darkTheme: darkTheme(),
       routes: {
         CartScreen.routeName: (ctx) => const CartScreen(),
       },

@@ -52,26 +52,29 @@ class CartScreen extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Cafeteria current status',
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Enter pickup time',
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ],
                     ),
                     // payment method
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Select a payment method',
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ],
                     ),
@@ -95,9 +98,11 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text(
                             '${index + 1}. itemsName',
+                            style: Theme.of(context).textTheme.bodyText1,
                           ),
-                          const Text(
+                          Text(
                             'pricing',
+                            style: Theme.of(context).textTheme.bodyText1,
                           ),
                         ],
                       ),

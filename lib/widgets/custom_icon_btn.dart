@@ -20,7 +20,7 @@ class CustomIconButton extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.55,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: Colors.green,
+          color: const Color(0xFF019267),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
@@ -34,7 +34,7 @@ class CustomIconButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(
-              width: 25,
+              width: 15,
             ),
             Text(
               buttontext,
@@ -42,7 +42,7 @@ class CustomIconButton extends StatelessWidget {
             ),
             buttonIcon,
             const SizedBox(
-              width: 25,
+              width: 15,
             ),
           ],
         ),
