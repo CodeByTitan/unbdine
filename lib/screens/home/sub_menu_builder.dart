@@ -74,7 +74,6 @@ class SubMenuBuilder extends StatelessWidget {
                   alignment: Alignment.bottomLeft,
                   child: Text(
                     menu[subMenuIndex][0],
-                    style: Theme.of(context).textTheme.displayLarge,
                   ),
                 ),
               ],
