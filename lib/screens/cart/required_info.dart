@@ -16,6 +16,7 @@ class RequiredInfo extends StatelessWidget {
         right: 15,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,17 +39,40 @@ class RequiredInfo extends StatelessWidget {
                 'Set pickup time',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
+              GestureDetector(
+                onTap: () {
+                  showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                  );
+                },
+                child: const Icon(
+                  Icons.schedule,
+                  color: Colors.blue,
+                ),
+              ),
             ],
           ),
           defSizedBox,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Remarks for Chef *',
-                style: Theme.of(context).textTheme.bodyText1,
+          const Divider(),
+          Text(
+            'Remarks for Chef *',
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          defSizedBox,
+          const TextField(
+            textInputAction: TextInputAction.done,
+            keyboardType: TextInputType.multiline,
+            // onEditingComplete: ,
+            // controller: ,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
               ),
-            ],
+              hintText: 'Add less garlic',
+            ),
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:unbdine/screens/cart/order_details.dart';
 import 'package:unbdine/screens/cart/required_info.dart';
 import 'package:unbdine/screens/cart/totalamt_card.dart';
@@ -13,47 +14,64 @@ class CartScreen extends StatelessWidget {
     Widget defSizedBox = SizedBox(
       height: MediaQuery.of(context).size.height * 0.01,
     );
-    return Scaffold(
-      appBar: AppBar(
-        leading: const BackScreenButton(),
-        title: const Text('Backpack/Cart'),
-      ),
-      body: Stack(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.all(15),
-            /* margin: EdgeInsets.only(
-              bottom: MediaQuery.of(context).size.height * 0.25,
-            ), */
-
-            child: ListView(
-              physics: const BouncingScrollPhysics(),
+    return KeyboardDismissOnTap(
+      child: KeyboardVisibilityBuilder(
+        builder: (
+          context,
+          isKeyboardVisible,
+        ) {
+          return Scaffold(
+            appBar: AppBar(
+              leading: const BackScreenButton(),
+              title: const Text('Backpack/Cart'),
+            ),
+            body: Stack(
               children: [
-                // order details
-                Text(
-                  'Order Details',
-                  style: Theme.of(context).textTheme.bodyText1,
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.65,
+                  width: MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.all(15),
+                  /* margin: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).size.height * 0.25,
+                    ), */
+
+                  child: ListView(
+                    physics: isKeyboardVisible
+                        ? const NeverScrollableScrollPhysics()
+                        : const BouncingScrollPhysics(),
+                    children: [
+                      // order details
+                      Text(
+                        isKeyboardVisible ? '' : 'Order Details',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      Visibility(
+                        visible: !isKeyboardVisible,
+                        child: const OrderDetails(),
+                      ),
+                      const Divider(),
+                      // Required Info
+                      RequiredInfo(
+                        defSizedBox: defSizedBox,
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.2,
+                      )
+                    ],
+                  ),
                 ),
-                const OrderDetails(),
-                const Divider(),
-                // Required Info
-                RequiredInfo(
-                  defSizedBox: defSizedBox,
+
+                // total amount Card
+                Visibility(
+                  visible: !isKeyboardVisible,
+                  child: TotalAmount(
+                    defSizedBox: defSizedBox,
+                  ),
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                )
               ],
             ),
-          ),
-
-          // total amount Card
-          TotalAmount(
-            defSizedBox: defSizedBox,
-          ),
-        ],
+          );
+        },
       ),
     );
   }
