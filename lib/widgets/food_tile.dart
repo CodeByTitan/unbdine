@@ -20,7 +20,7 @@ class FoodTile extends StatelessWidget {
     return Visibility(
       visible: isAvailable,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.8,
+        // width: 200,
         height: 120,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -34,62 +34,56 @@ class FoodTile extends StatelessWidget {
           ),
         ),
         margin: const EdgeInsets.only(
-          top: 55,
+          bottom: 45,
+          top: 10,
         ),
         alignment: Alignment.center,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                // TODO: Image
-                Transform(
-                  transform: Matrix4.skew(0, 0.4),
-                  child: Container(
-                    height: 120,
-                    width: 120,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                    ),
-                  ),
+            Transform(
+              transform: Matrix4.skew(0, 0.4),
+              child: Container(
+                height: 120,
+                width: 120,
+                decoration: const BoxDecoration(
+                  color: Colors.black,
                 ),
-                // info text
-                Container(
-                  height: 75,
-                  margin: const EdgeInsets.only(left: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        foodName,
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              color: Colors.white,
-                            ),
-                      ),
-                      Text(
-                        '\$ $foodPrice',
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-                      Text(
-                        shortDescription,
-                        style: Theme.of(context).textTheme.bodyText2,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
+            // info text
+            Container(
+              height: 75,
+              margin: const EdgeInsets.only(left: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    foodName,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                        ),
+                  ),
+                  Text(
+                    '\$ $foodPrice',
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                  Text(
+                    shortDescription,
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                ],
+              ),
+            ),
+            const Spacer(),
             // add to cart button
-            Padding(
-              padding: const EdgeInsets.only(right: 25),
-              child: IconButton(
-                // TODO: add to cart function
-                onPressed: () {},
-                icon: Icon(
-                  Icons.add_shopping_cart,
-                  color: Theme.of(context).iconTheme.color,
-                ),
+            IconButton(
+              // TODO: add to cart function
+              onPressed: () {},
+              icon: Icon(
+                Icons.add_shopping_cart,
+                color: Theme.of(context).iconTheme.color,
               ),
             ),
           ],
