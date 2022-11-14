@@ -23,14 +23,17 @@ class CartScreen extends StatelessWidget {
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemCount: 5,
-                scrollDirection: Axis.horizontal,
+                scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
                   return Center(
                     child: Container(
-                      margin: const EdgeInsets.only(right: 8),
-                      width: 150,
-                      height: 180,
+                      margin: const EdgeInsets.only(
+                        top: 10,
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      height: 100,
                       decoration: BoxDecoration(
+                        color: Colors.amber,
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
@@ -38,6 +41,7 @@ class CartScreen extends StatelessWidget {
                 },
               ),
             ),
+            const Divider(),
             // stats
             Expanded(
               flex: 2,
@@ -48,29 +52,26 @@ class CartScreen extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Cafeteria current status',
-                          style: Theme.of(context).textTheme.headline4,
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Enter pickup time',
-                          style: Theme.of(context).textTheme.headline4,
                         ),
                       ],
                     ),
                     // payment method
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Select a payment method',
-                          style: Theme.of(context).textTheme.headline4,
                         ),
                       ],
                     ),
@@ -94,14 +95,9 @@ class CartScreen extends StatelessWidget {
                         children: [
                           Text(
                             '${index + 1}. itemsName',
-                            style: Theme.of(context).textTheme.headline4,
                           ),
-                          Text(
+                          const Text(
                             'pricing',
-                            style:
-                                Theme.of(context).textTheme.headline4!.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                    ),
                           ),
                         ],
                       ),
