@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
-import 'package:unbdine/screens/dashboard/dashboard_screen.dart';
+import 'package:unbdine/screens/home/home.dart';
 
 class AuthenticationScreen extends StatefulHookConsumerWidget {
   const AuthenticationScreen({super.key});
@@ -136,7 +136,7 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DashboardScreen(),
+                            builder: (context) => const HomeScreen(),
                           ),
                         );
                       },

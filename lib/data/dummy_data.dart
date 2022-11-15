@@ -17,6 +17,34 @@ List food = [
     dinner,
   ],
 ];
+List<Addon> addons = [
+  Addon(
+    id: '01',
+    addonName: 'x1',
+    addonPrice: 1.25,
+  ),
+  Addon(
+    id: '02',
+    addonName: 'x2',
+    addonPrice: 1.25,
+  ),
+  Addon(
+    id: '03',
+    addonName: 'x3',
+    addonPrice: 1.25,
+  ),
+  Addon(
+    id: '04',
+    addonName: 'x4',
+    addonPrice: 1.25,
+  ),
+  Addon(
+    id: '05',
+    addonName: 'x5',
+    addonPrice: 1.25,
+  ),
+];
+
 List<Food> breakfast = [
   Food(
     id: '01',
@@ -239,5 +267,50 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+  ),
+];
+
+List<OrderedFood> orderedFood = [
+  OrderedFood(
+    id: '01',
+    foodName: 'Food Name 01',
+    foodPrice: 16.65,
+    foodImgUrl: 'foodImgUrl',
+    quantity: 2,
+    addons: [
+      addons[0],
+      addons[2],
+    ],
+  ),
+  OrderedFood(
+    id: '02',
+    foodName: 'Food Name 02',
+    foodPrice: 45.89,
+    foodImgUrl: 'foodImgUrl',
+    quantity: 1,
+    addons: [
+      addons[1],
+    ],
+  ),
+  OrderedFood(
+    id: '01',
+    foodName: 'Food Name 01',
+    foodPrice: 20.00,
+    foodImgUrl: 'foodImgUrl',
+    quantity: 1,
+    addons: [
+      addons[1],
+      addons[3],
+    ],
+  ),
+  OrderedFood(
+    id: '01',
+    foodName: 'Food Name 01',
+    foodPrice: 25.08,
+    foodImgUrl: 'foodImgUrl',
+    quantity: 3,
+    addons: [
+      addons[3],
+    ],
   ),
 ];

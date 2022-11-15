@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:unbdine/screens/auth/authentication_screen.dart';
-import 'package:unbdine/utils/app_constant.dart';
+
+import '../auth/auth_screen.dart';
 
 class SplashScreen extends StatefulHookConsumerWidget {
   const SplashScreen({
@@ -48,15 +47,13 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
     return Stack(
       children: [
         Container(
-          height: 1.sh,
-          width: 1.sw,
-          decoration: const BoxDecoration(
-            color: AppConstant.backgroundColor,
-          ),
+          height: 1,
+          width: 1,
+          decoration: const BoxDecoration(),
         ),
-        Center(
+        const Center(
           child: FlutterLogo(
-            size: 100.sp,
+            size: 100,
           ),
         ),
       ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/utils/app_constant.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({
@@ -9,18 +8,15 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: AppConstant.backgroundColor,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Loading...',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Loading...',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+          ],
         ),
       ),
     );

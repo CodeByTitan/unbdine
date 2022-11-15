@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomIconButton extends StatelessWidget {
   final String buttontext;
@@ -16,29 +15,35 @@ class CustomIconButton extends StatelessWidget {
     return GestureDetector(
       onTap: buttonFunction,
       child: Container(
-        margin: EdgeInsets.only(bottom: 15.sp),
-        height: 50.sp,
+        margin: const EdgeInsets.only(bottom: 15),
+        height: 50,
         width: MediaQuery.of(context).size.width * 0.55,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.sp),
-          color: Colors.green,
+          borderRadius: BorderRadius.circular(50),
+          color: const Color(0xFF019267),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
-              spreadRadius: 2.sp,
-              blurRadius: 20.sp,
-              offset: const Offset(0, 1), // changes position of shadow
+              spreadRadius: 2,
+              blurRadius: 20,
+              offset: const Offset(0, 1),
             ),
           ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            const SizedBox(
+              width: 15,
+            ),
             Text(
               buttontext,
-              style: Theme.of(context).textTheme.displayMedium,
+              textScaleFactor: 1.3,
             ),
             buttonIcon,
+            const SizedBox(
+              width: 15,
+            ),
           ],
         ),
       ),

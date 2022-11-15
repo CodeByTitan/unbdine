@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/data/dummy_data.dart';
-import 'package:unbdine/widgets/dashboard_tile.dart';
-import 'package:unbdine/widgets/stacked_menu_text.dart';
+
+import '../../data/dummy_data.dart';
+import '../../widgets/main_menu_tile.dart';
+import '../../widgets/stacked_menu_text.dart';
 
 class MainMenu extends StatelessWidget {
   final VoidCallback toBreakfast;
@@ -21,17 +22,17 @@ class MainMenu extends StatelessWidget {
       children: [
         Column(
           children: [
-            DashBoardTile(
+            MainMenuTile(
               text: food[0][0],
               imagePath: food[0][1],
               onClicked: toBreakfast,
             ),
-            DashBoardTile(
+            MainMenuTile(
               text: food[1][0],
               imagePath: food[1][1],
               onClicked: toGrill,
             ),
-            DashBoardTile(
+            MainMenuTile(
               text: food[2][0],
               imagePath: food[2][1],
               onClicked: toDinner,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/classes/food_class.dart';
-import 'package:unbdine/utils/app_constant.dart';
-import 'package:unbdine/widgets/food_tile.dart';
+
+import '../../classes/food_class.dart';
+import '../../widgets/food_tile.dart';
 
 class SubMenuBuilder extends StatelessWidget {
   final int subMenuIndex;
@@ -30,6 +30,7 @@ class SubMenuBuilder extends StatelessWidget {
         Transform(
           transform: Matrix4.skewY(-0.2),
           child: Container(
+            width: MediaQuery.of(context).size.width,
             margin: const EdgeInsets.only(
               top: 100,
               left: 15,
@@ -38,11 +39,14 @@ class SubMenuBuilder extends StatelessWidget {
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: submenu.length,
-              itemBuilder: (_, i) => FoodTile(
-                foodName: submenu[i].foodName,
-                isAvailable: submenu[i].isAvailable,
-                shortDescription: submenu[i].shortDescription,
-                foodPrice: submenu[i].foodPrice,
+              itemBuilder: (_, i) => SizedBox(
+                width: 100,
+                child: FoodTile(
+                  foodName: submenu[i].foodName,
+                  isAvailable: submenu[i].isAvailable,
+                  shortDescription: submenu[i].shortDescription,
+                  foodPrice: submenu[i].foodPrice,
+                ),
               ),
             ),
           ),
@@ -75,7 +79,9 @@ class SubMenuBuilder extends StatelessWidget {
                   alignment: Alignment.bottomLeft,
                   child: Text(
                     menu[subMenuIndex][0],
-                    style: Theme.of(context).textTheme.displayLarge,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                        ),
                   ),
                 ),
               ],
@@ -89,13 +95,13 @@ class SubMenuBuilder extends StatelessWidget {
             child: Container(
               width: 100,
               padding: const EdgeInsets.all(5),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    AppConstant.primaryColor,
-                    Colors.transparent,
+                    Theme.of(context).primaryColorDark,
+                    Colors.transparent
                   ],
                 ),
               ),
