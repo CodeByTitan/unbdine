@@ -1,12 +1,57 @@
 import 'package:flutter/material.dart';
 
-class RequiredInfo extends StatelessWidget {
+class RequiredInfo extends StatefulWidget {
   const RequiredInfo({
     Key? key,
     required this.defSizedBox,
   }) : super(key: key);
 
   final Widget defSizedBox;
+
+  @override
+  State<RequiredInfo> createState() => _RequiredInfoState();
+}
+
+class _RequiredInfoState extends State<RequiredInfo> {
+  TimeOfDay pickupTime = TimeOfDay.now();
+
+  _setPickupTime() async {
+    TimeOfDay currentTime = TimeOfDay.now();
+    TimeOfDay pickedTime = await showTimePicker(
+          context: context,
+          helpText: 'Select Pickup Time',
+          initialTime: TimeOfDay.now(),
+        ) ??
+        currentTime;
+    int hourGap = pickedTime.hour - currentTime.hour;
+    bool isCorrectPickupTime =
+        ((hourGap * 60) + (pickedTime.minute - currentTime.minute) <= 180) &&
+            (hourGap > 0);
+
+    if (isCorrectPickupTime) {
+      setState(() {
+        pickupTime = pickedTime;
+      });
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => const Dialog(
+          child: SizedBox(
+            height: 150,
+            width: 150,
+            child: Center(
+              child: Text(
+                'Invalid Time',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +63,7 @@ class RequiredInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          widget.defSizedBox,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -31,7 +77,7 @@ class RequiredInfo extends StatelessWidget {
               ),
             ],
           ),
-          defSizedBox,
+          widget.defSizedBox,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -39,27 +85,34 @@ class RequiredInfo extends StatelessWidget {
                 'Set pickup time',
                 style: Theme.of(context).textTheme.bodyText1,
               ),
-              GestureDetector(
-                onTap: () {
-                  showTimePicker(
-                    context: context,
-                    initialTime: TimeOfDay.now(),
-                  );
-                },
-                child: const Icon(
-                  Icons.schedule,
-                  color: Colors.blue,
-                ),
+              Row(
+                children: [
+                  Text(
+                    '${pickupTime.hour} : ${pickupTime.minute}',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  // TODO
+                  GestureDetector(
+                    onTap: _setPickupTime,
+                    child: const Icon(
+                      Icons.schedule,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-          defSizedBox,
+          widget.defSizedBox,
           const Divider(),
           Text(
             'Remarks for Chef *',
             style: Theme.of(context).textTheme.bodyText1,
           ),
-          defSizedBox,
+          widget.defSizedBox,
           const TextField(
             textInputAction: TextInputAction.done,
             keyboardType: TextInputType.multiline,

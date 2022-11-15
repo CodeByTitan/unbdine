@@ -31,7 +31,9 @@ class CartScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.65,
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(15),
-                  child: const OrderDetails(),
+                  child: OrderDetails(
+                    isKeyboardVisible: isKeyboardVisible,
+                  ),
                 ),
 
                 // total amount Card

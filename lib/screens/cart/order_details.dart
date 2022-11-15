@@ -4,8 +4,10 @@ import 'package:unbdine/screens/cart/required_info.dart';
 import '../../data/dummy_data.dart';
 
 class OrderDetails extends StatelessWidget {
+  final bool isKeyboardVisible;
   const OrderDetails({
     Key? key,
+    required this.isKeyboardVisible,
   }) : super(key: key);
 
   @override
@@ -13,7 +15,9 @@ class OrderDetails extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
       child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
+        physics: isKeyboardVisible
+            ? const NeverScrollableScrollPhysics()
+            : const BouncingScrollPhysics(),
         itemCount: orderedFood.length,
         itemBuilder: (_, i) {
           return Center(
@@ -93,6 +97,7 @@ class OrderDetails extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
+                      // addons
                       Container(
                         height: 30,
                         padding: const EdgeInsets.symmetric(
@@ -105,7 +110,6 @@ class OrderDetails extends StatelessWidget {
                           ),
                           borderRadius: BorderRadius.circular(5),
                         ),
-                        // addons
                         child: Row(
                           children: [
                             Expanded(

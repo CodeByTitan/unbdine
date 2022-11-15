@@ -119,6 +119,10 @@ ThemeData darkTheme() {
         foregroundColor: MaterialStateProperty.all(Colors.white),
       ),
     ),
+    timePickerTheme: TimePickerThemeData(
+      dialTextColor: Colors.white70,
+      backgroundColor: Colors.grey[700],
+    ),
     brightness: Brightness.dark,
     useMaterial3: true,
   );
