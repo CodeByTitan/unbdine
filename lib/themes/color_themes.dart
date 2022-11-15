@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:unbdine/themes/color_palettes.dart';
-import 'package:unbdine/themes/page_transition_theme.dart';
+
+import './color_palettes.dart';
+import './page_transition_theme.dart';
 
 ThemeData lightTheme() {
   return ThemeData(

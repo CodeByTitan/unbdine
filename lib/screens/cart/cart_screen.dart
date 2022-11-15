@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:unbdine/screens/cart/order_details.dart';
-import 'package:unbdine/screens/cart/required_info.dart';
-import 'package:unbdine/screens/cart/totalamt_card.dart';
-import 'package:unbdine/widgets/back_screen_button.dart';
+
+import './order_details.dart';
+import './required_info.dart';
+import './totalamt_card.dart';
+import '../../widgets/back_screen_button.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

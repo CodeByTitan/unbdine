@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/classes/food_class.dart';
-import 'package:unbdine/widgets/food_tile.dart';
+
+import '../../classes/food_class.dart';
+import '../../widgets/food_tile.dart';
 
 class SubMenuBuilder extends StatelessWidget {
   final int subMenuIndex;

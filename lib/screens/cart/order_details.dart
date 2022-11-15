@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/data/dummy_data.dart';
+
+import '../../data/dummy_data.dart';
 
 class OrderDetails extends StatelessWidget {
   const OrderDetails({

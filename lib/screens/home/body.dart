@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/data/dummy_data.dart';
-import 'package:unbdine/screens/cart/cart_screen.dart';
-import 'package:unbdine/screens/home/main_menu.dart';
-import 'package:unbdine/screens/home/sub_menu_builder.dart';
-import 'package:unbdine/widgets/custom_icon_btn.dart';
+
+import './main_menu.dart';
+import './sub_menu_builder.dart';
+import '../cart/cart_screen.dart';
+import '../../widgets/custom_icon_btn.dart';
+import '../../data/dummy_data.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/widgets/custom_icon_btn.dart';
+
+import '../../widgets/custom_icon_btn.dart';
 
 class TotalAmount extends StatelessWidget {
   final Widget defSizedBox;
