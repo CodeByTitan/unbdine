@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 import './order_details.dart';
-import './required_info.dart';
 import './totalamt_card.dart';
 import '../../widgets/back_screen_button.dart';
 
@@ -32,34 +31,7 @@ class CartScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.65,
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.all(15),
-                  /* margin: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).size.height * 0.25,
-                    ), */
-
-                  child: ListView(
-                    physics: isKeyboardVisible
-                        ? const NeverScrollableScrollPhysics()
-                        : const BouncingScrollPhysics(),
-                    children: [
-                      // order details
-                      Text(
-                        isKeyboardVisible ? '' : 'Order Details',
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
-                      Visibility(
-                        visible: !isKeyboardVisible,
-                        child: const OrderDetails(),
-                      ),
-                      const Divider(),
-                      // Required Info
-                      RequiredInfo(
-                        defSizedBox: defSizedBox,
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.2,
-                      )
-                    ],
-                  ),
+                  child: const OrderDetails(),
                 ),
 
                 // total amount Card
