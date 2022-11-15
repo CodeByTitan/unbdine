@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:unbdine/screens/home/home.dart';
@@ -43,8 +43,8 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
         stream: FirebaseAuth.instance.userChanges(),
         builder: (BuildContext context, AsyncSnapshot<User?> snapshot) {
           return Container(
-            height: 1.sh,
-            width: 1.sw,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -55,20 +55,20 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 30.w,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 30,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 30.h,
+                  const SizedBox(
+                    height: 30,
                   ),
                   Stack(
                     children: [
                       Container(
-                        height: 300.h,
-                        width: 1.sw,
+                        height: 300,
+                        width: MediaQuery.of(context).size.width,
                         alignment: Alignment.center,
                         child: Lottie.asset(
                           'assets/animations/logInFood.json',
@@ -76,16 +76,16 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                           filterQuality: FilterQuality.high,
                         ),
                       ),
-                      Positioned(
-                        left: 0.w,
-                        right: 0.w,
-                        bottom: 10.h,
+                      const Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 10,
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
                             'Enjoy your meal',
                             style: TextStyle(
-                              fontSize: 25.sp,
+                              fontSize: 25,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),
@@ -94,32 +94,30 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 200.h,
-                  ),
+                  const SizedBox(height: 200),
                   Container(
-                    height: 45.h,
-                    width: 1.sw,
+                    height: 45,
+                    width: MediaQuery.of(context).size.width,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(
-                        10.r,
+                        10,
                       ),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
+                      children: const [
+                        Icon(
                           Icons.email,
                         ),
                         SizedBox(
-                          width: 10.w,
+                          width: 10,
                         ),
                         Text(
                           "Sign In with Microsoft Account",
                           style: TextStyle(
-                            fontSize: 15.sp,
+                            fontSize: 15,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
@@ -127,8 +125,8 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 15.h,
+                  const SizedBox(
+                    height: 15,
                   ),
                   Center(
                     child: ElevatedButton(
