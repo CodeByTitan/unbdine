@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:unbdine/screens/auth/auth_screen.dart';
+
+import '../auth/auth_screen.dart';
 
 class SplashScreen extends StatefulHookConsumerWidget {
   const SplashScreen({

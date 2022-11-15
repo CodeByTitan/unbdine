@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/data/dummy_data.dart';
-import 'package:unbdine/widgets/main_menu_tile.dart';
-import 'package:unbdine/widgets/stacked_menu_text.dart';
+
+import '../../data/dummy_data.dart';
+import '../../widgets/main_menu_tile.dart';
+import '../../widgets/stacked_menu_text.dart';
 
 class MainMenu extends StatelessWidget {
   final VoidCallback toBreakfast;

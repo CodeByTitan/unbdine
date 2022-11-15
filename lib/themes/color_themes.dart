@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:unbdine/themes/color_palettes.dart';
-import 'package:unbdine/themes/page_transition_theme.dart';
+
+import './color_palettes.dart';
+import './page_transition_theme.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
@@ -19,7 +20,6 @@ ThemeData lightTheme() {
       backgroundColor: const Color(0xFFfeedb8),
       foregroundColor: Colors.black,
       elevation: 2,
-      shadowColor: LightPalette.swatchColor.shade600,
       titleTextStyle: GoogleFonts.cabin(
         color: Colors.black,
         letterSpacing: 1.5,
@@ -37,8 +37,6 @@ ThemeData lightTheme() {
     ),
     listTileTheme: const ListTileThemeData(
       enableFeedback: true,
-      tileColor: Color(0xFFFDFFA9),
-      iconColor: Color(0xFF019267),
       textColor: Colors.black,
     ),
     textTheme: TextTheme(
@@ -54,6 +52,12 @@ ThemeData lightTheme() {
     ),
     primaryIconTheme: const IconThemeData(
       color: Colors.black,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        foregroundColor: MaterialStateProperty.all(Colors.black),
+      ),
     ),
     brightness: Brightness.light,
     useMaterial3: true,
@@ -76,7 +80,6 @@ ThemeData darkTheme() {
       backgroundColor: DarkPalette.swatchColor.shade400,
       foregroundColor: Colors.white,
       elevation: 2,
-      shadowColor: DarkPalette.swatchColor.shade600,
       titleTextStyle: GoogleFonts.cabin(
         color: Colors.white,
         letterSpacing: 1.5,
@@ -94,8 +97,6 @@ ThemeData darkTheme() {
     ),
     listTileTheme: const ListTileThemeData(
       enableFeedback: true,
-      tileColor: Color(0xFF1B1B2F),
-      iconColor: Color(0xFF019267),
       textColor: Colors.white,
     ),
     textTheme: TextTheme(
@@ -111,6 +112,16 @@ ThemeData darkTheme() {
     ),
     primaryIconTheme: const IconThemeData(
       color: Colors.black,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.grey[800]),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+      ),
+    ),
+    timePickerTheme: TimePickerThemeData(
+      dialTextColor: Colors.white70,
+      backgroundColor: Colors.grey[700],
     ),
     brightness: Brightness.dark,
     useMaterial3: true,

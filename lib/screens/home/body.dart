@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/data/dummy_data.dart';
-import 'package:unbdine/screens/cart/cart_screen.dart';
-import 'package:unbdine/screens/home/main_menu.dart';
-import 'package:unbdine/screens/home/sub_menu_builder.dart';
-import 'package:unbdine/widgets/custom_icon_btn.dart';
+
+import './main_menu.dart';
+import './sub_menu_builder.dart';
+import '../cart/cart_screen.dart';
+import '../../widgets/custom_icon_btn.dart';
+import '../../data/dummy_data.dart';
 
 class Body extends StatefulWidget {
   const Body({super.key});
@@ -17,8 +18,21 @@ PageController pageController = PageController(
   keepPage: true,
 );
 
-// TODO : a reusable function for page switching
 class _BodyState extends State<Body> {
+  void changepage(int i) {
+    pageController.animateToPage(
+      i,
+      duration: const Duration(
+        seconds: 1,
+      ),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  void backtoHome() {
+    changepage(0);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -29,74 +43,32 @@ class _BodyState extends State<Body> {
           children: [
             MainMenu(
               toBreakfast: () {
-                pageController.animateToPage(
-                  1,
-                  duration: const Duration(
-                    seconds: 1,
-                  ),
-                  curve: Curves.easeInOut,
-                );
+                changepage(1);
               },
               toGrill: () {
-                pageController.animateToPage(
-                  2,
-                  duration: const Duration(
-                    seconds: 1,
-                  ),
-                  curve: Curves.easeInOut,
-                );
+                changepage(2);
               },
               toDinner: () {
-                pageController.animateToPage(
-                  3,
-                  duration: const Duration(
-                    seconds: 1,
-                  ),
-                  curve: Curves.easeInOut,
-                );
+                changepage(3);
               },
             ),
             SubMenuBuilder(
               subMenuIndex: 0,
               menu: food,
               submenu: breakfast,
-              backToMenu: () {
-                pageController.animateToPage(
-                  0,
-                  duration: const Duration(
-                    seconds: 1,
-                  ),
-                  curve: Curves.easeInOut,
-                );
-              },
+              backToMenu: backtoHome,
             ),
             SubMenuBuilder(
               subMenuIndex: 1,
               menu: food,
               submenu: grill,
-              backToMenu: () {
-                pageController.animateToPage(
-                  0,
-                  duration: const Duration(
-                    seconds: 1,
-                  ),
-                  curve: Curves.easeInOut,
-                );
-              },
+              backToMenu: backtoHome,
             ),
             SubMenuBuilder(
               subMenuIndex: 2,
               menu: food,
               submenu: dinner,
-              backToMenu: () {
-                pageController.animateToPage(
-                  0,
-                  duration: const Duration(
-                    seconds: 1,
-                  ),
-                  curve: Curves.easeInOut,
-                );
-              },
+              backToMenu: backtoHome,
             ),
           ],
         ),
@@ -104,8 +76,8 @@ class _BodyState extends State<Body> {
         Align(
           alignment: Alignment.bottomCenter,
           child: CustomIconButton(
-            buttontext: 'Check Out',
-            buttonIcon: const Icon(Icons.shopping_cart_checkout),
+            buttontext: 'My Cart',
+            buttonIcon: const Icon(Icons.shopping_cart),
             buttonFunction: () {
               Navigator.of(context).pushNamed(CartScreen.routeName);
             },

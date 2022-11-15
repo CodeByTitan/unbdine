@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:unbdine/widgets/stacked_food_type_text.dart';
+
+import './stacked_food_type_text.dart';
 
 class MainMenuTile extends StatelessWidget {
   final String text;

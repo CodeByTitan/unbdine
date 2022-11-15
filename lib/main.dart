@@ -4,10 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:unbdine/screens/splash/splash_screen.dart';
-import 'package:unbdine/screens/cart/cart_screen.dart';
-import 'package:unbdine/themes/color_themes.dart';
-import 'package:unbdine/widgets/error_screen.dart';
+import './screens/splash/splash_screen.dart';
+import './screens/cart/cart_screen.dart';
+import './themes/color_themes.dart';
+import './widgets/error_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
