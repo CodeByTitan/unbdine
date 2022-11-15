@@ -53,6 +53,12 @@ ThemeData lightTheme() {
     primaryIconTheme: const IconThemeData(
       color: Colors.black,
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        foregroundColor: MaterialStateProperty.all(Colors.black),
+      ),
+    ),
     brightness: Brightness.light,
     useMaterial3: true,
   );
@@ -106,6 +112,12 @@ ThemeData darkTheme() {
     ),
     primaryIconTheme: const IconThemeData(
       color: Colors.black,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.grey[800]),
+        foregroundColor: MaterialStateProperty.all(Colors.white),
+      ),
     ),
     brightness: Brightness.dark,
     useMaterial3: true,
