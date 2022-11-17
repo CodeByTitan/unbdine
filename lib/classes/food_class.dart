@@ -5,6 +5,7 @@ class Food {
   final bool isAvailable;
   final String foodImgUrl;
   final String shortDescription;
+  final List<Addon> addOns;
 
   Food({
     required this.id,
@@ -13,6 +14,7 @@ class Food {
     required this.isAvailable,
     required this.foodImgUrl,
     required this.shortDescription,
+    required this.addOns,
   });
 }
 

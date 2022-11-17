@@ -94,7 +94,6 @@ class _RequiredInfoState extends State<RequiredInfo> {
                   const SizedBox(
                     width: 10,
                   ),
-                  // TODO
                   GestureDetector(
                     onTap: _setPickupTime,
                     child: const Icon(

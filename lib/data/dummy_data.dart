@@ -53,6 +53,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '02',
@@ -61,6 +62,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '03',
@@ -69,6 +71,7 @@ List<Food> breakfast = [
     isAvailable: false,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '04',
@@ -77,6 +80,7 @@ List<Food> breakfast = [
     isAvailable: false,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '05',
@@ -85,6 +89,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '06',
@@ -93,6 +98,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '07',
@@ -101,6 +107,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '08',
@@ -109,6 +116,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '09',
@@ -117,6 +125,7 @@ List<Food> breakfast = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
 ];
 
@@ -128,6 +137,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '02',
@@ -136,6 +146,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '03',
@@ -144,6 +155,7 @@ List<Food> grill = [
     isAvailable: false,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '04',
@@ -152,6 +164,7 @@ List<Food> grill = [
     isAvailable: false,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '05',
@@ -160,6 +173,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '06',
@@ -168,6 +182,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '07',
@@ -176,6 +191,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '08',
@@ -184,6 +200,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '09',
@@ -192,6 +209,7 @@ List<Food> grill = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
 ];
 
@@ -203,6 +221,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '02',
@@ -211,6 +230,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '03',
@@ -219,6 +239,7 @@ List<Food> dinner = [
     isAvailable: false,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '04',
@@ -227,6 +248,7 @@ List<Food> dinner = [
     isAvailable: false,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '05',
@@ -235,6 +257,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'short Description ',
+    addOns: addons,
   ),
   Food(
     id: '06',
@@ -243,6 +266,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '07',
@@ -251,6 +275,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '08',
@@ -259,6 +284,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
   Food(
     id: '09',
@@ -267,6 +293,7 @@ List<Food> dinner = [
     isAvailable: true,
     foodImgUrl: 'foodImgUrl',
     shortDescription: 'Short Description ',
+    addOns: addons,
   ),
 ];
 

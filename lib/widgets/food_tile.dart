@@ -6,6 +6,7 @@ class FoodTile extends StatelessWidget {
   final bool isAvailable;
   final String shortDescription;
   final double foodPrice;
+  final VoidCallback addToCart;
 
   const FoodTile({
     super.key,
@@ -13,6 +14,7 @@ class FoodTile extends StatelessWidget {
     required this.isAvailable,
     required this.shortDescription,
     required this.foodPrice,
+    required this.addToCart,
   });
 
   @override
@@ -79,8 +81,7 @@ class FoodTile extends StatelessWidget {
             const Spacer(),
             // add to cart button
             IconButton(
-              // TODO: add to cart function
-              onPressed: () {},
+              onPressed: addToCart,
               icon: Icon(
                 Icons.add_shopping_cart,
                 color: Theme.of(context).iconTheme.color,
