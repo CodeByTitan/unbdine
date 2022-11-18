@@ -48,7 +48,9 @@ class SubMenuBuilder extends StatelessWidget {
                   shortDescription: submenu[i].shortDescription,
                   foodPrice: submenu[i].foodPrice,
                   addToCart: () {
-                    showModalBottomSheet(
+                    showModalBottomSheet<dynamic>(
+                      isScrollControlled: true,
+                      backgroundColor: Theme.of(context).primaryColorDark,
                       context: context,
                       builder: (context) => BottomPopUP(
                         foodName: submenu[i].foodName,

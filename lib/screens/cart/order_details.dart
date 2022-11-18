@@ -40,7 +40,6 @@ class OrderDetails extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // TODO : add image
                           Container(
                             height: 75,
                             width: 75,
