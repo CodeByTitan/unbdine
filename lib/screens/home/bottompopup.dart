@@ -32,6 +32,7 @@ class _BottomPopUPState extends State<BottomPopUP> {
           // food name
           Container(
             padding: const EdgeInsets.all(5),
+            margin: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColorDark,
               borderRadius: BorderRadius.circular(5),
@@ -59,7 +60,7 @@ class _BottomPopUPState extends State<BottomPopUP> {
               margin: const EdgeInsets.all(7.5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7.5),
-                color: Theme.of(context).primaryColorLight,
+                color: Theme.of(context).backgroundColor,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -164,6 +165,7 @@ class _BottomPopUPState extends State<BottomPopUP> {
                     child: CustomIconButton(
                       buttontext: 'Add to Cart',
                       buttonIcon: const Icon(Icons.add_shopping_cart),
+                      bottomPadding: 0,
                       buttonFunction: () {
                         Navigator.of(context).pop();
                       },
@@ -195,7 +197,7 @@ class FoodChoiceListTile extends StatelessWidget {
       margin: const EdgeInsets.all(7.5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7.5),
-        color: Theme.of(context).primaryColorLight,
+        color: Theme.of(context).backgroundColor,
       ),
       child: Column(
         children: [

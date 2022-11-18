@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../payment/payment_screen.dart';
 import '../../widgets/custom_icon_btn.dart';
 
 class TotalAmount extends StatelessWidget {
@@ -93,7 +94,10 @@ class TotalAmount extends StatelessWidget {
                 CustomIconButton(
                   buttontext: 'Proceed to Pay',
                   buttonIcon: const Icon(Icons.payment),
-                  buttonFunction: () {},
+                  bottomPadding: 15,
+                  buttonFunction: () {
+                    Navigator.of(context).pushNamed(PaymentScreen.routeName);
+                  },
                 ),
               ],
             ),

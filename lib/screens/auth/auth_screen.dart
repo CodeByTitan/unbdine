@@ -1,11 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
-import 'package:unbdine/screens/home/home.dart';
+
+import '../home/home.dart';
 
 class AuthenticationScreen extends StatefulHookConsumerWidget {
   const AuthenticationScreen({super.key});
@@ -74,6 +77,7 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                           'assets/animations/logInFood.json',
                           fit: BoxFit.cover,
                           filterQuality: FilterQuality.high,
+                          frameRate: FrameRate(30),
                         ),
                       ),
                       const Positioned(
@@ -109,7 +113,7 @@ class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Icon(
-                          Icons.email,
+                          FontAwesomeIcons.microsoft,
                         ),
                         SizedBox(
                           width: 10,

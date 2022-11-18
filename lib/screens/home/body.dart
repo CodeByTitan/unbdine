@@ -78,6 +78,7 @@ class _BodyState extends State<Body> {
           child: CustomIconButton(
             buttontext: 'My Cart',
             buttonIcon: const Icon(Icons.shopping_cart),
+            bottomPadding: 15,
             buttonFunction: () {
               Navigator.of(context).pushNamed(CartScreen.routeName);
             },
