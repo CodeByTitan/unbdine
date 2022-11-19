@@ -8,10 +8,10 @@ class MainMenu extends StatelessWidget {
   final VoidCallback toBreakfast;
   final VoidCallback toGrill;
   final VoidCallback toDinner;
-  final double miniTextStartPos; //-200
-  final double miniTextEndPos; // 0
-  final double menuTextStartPos; // -50
-  final double menuTextEndPos; // 0
+  final double miniTextStartPos;
+  final double miniTextEndPos;
+  final double menuTextStartPos;
+  final double menuTextEndPos;
 
   const MainMenu({
     super.key,
@@ -28,30 +28,32 @@ class MainMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Column(
-          children: [
-            MainMenuTile(
-              text: food[0][0],
-              imagePath: food[0][1],
-              onClicked: toBreakfast,
-              miniTextStartPos: miniTextStartPos,
-              miniTextEndPos: miniTextEndPos,
-            ),
-            MainMenuTile(
-              text: food[1][0],
-              imagePath: food[1][1],
-              onClicked: toGrill,
-              miniTextStartPos: miniTextStartPos,
-              miniTextEndPos: miniTextEndPos,
-            ),
-            MainMenuTile(
-              text: food[2][0],
-              imagePath: food[2][1],
-              miniTextStartPos: miniTextStartPos,
-              miniTextEndPos: miniTextEndPos,
-              onClicked: toDinner,
-            ),
-          ],
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              MainMenuTile(
+                text: food[0][0],
+                imagePath: food[0][1],
+                onClicked: toBreakfast,
+                miniTextStartPos: miniTextStartPos,
+                miniTextEndPos: miniTextEndPos,
+              ),
+              MainMenuTile(
+                text: food[1][0],
+                imagePath: food[1][1],
+                onClicked: toGrill,
+                miniTextStartPos: miniTextStartPos,
+                miniTextEndPos: miniTextEndPos,
+              ),
+              MainMenuTile(
+                text: food[2][0],
+                imagePath: food[2][1],
+                miniTextStartPos: miniTextStartPos,
+                miniTextEndPos: miniTextEndPos,
+                onClicked: toDinner,
+              ),
+            ],
+          ),
         ),
         TweenAnimationBuilder(
           tween: Tween<double>(

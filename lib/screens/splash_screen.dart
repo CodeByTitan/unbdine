@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../auth/auth_screen.dart';
+import 'auth/auth_screen.dart';
 
-class SplashScreen extends StatefulHookConsumerWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({
     super.key,
   });
 
   @override
-  ConsumerState<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends ConsumerState<SplashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
@@ -44,19 +42,22 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 1,
-          width: 1,
-          decoration: const BoxDecoration(),
-        ),
-        const Center(
-          child: FlutterLogo(
-            size: 100,
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: Theme.of(context).primaryColorLight,
           ),
-        ),
-      ],
+          Center(
+            child: Text(
+              'UNB Dine',
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

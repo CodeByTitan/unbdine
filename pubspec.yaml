@@ -16,20 +16,16 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  flutter_hooks: ^0.18.5+1
   fluttertoast: ^8.1.1
   lottie: ^1.4.3
   google_fonts: ^3.0.1
   flutter_phoenix: ^1.1.0
-  hooks_riverpod: ^2.1.1
-  package_info_plus: ^1.4.3+1
   flutter_keyboard_visibility: ^5.4.0
   font_awesome_flutter: ^10.2.1
   firebase_auth: any
   firebase_core: any
   firebase_auth_oauth: any
   cloud_firestore: any
-  # flutter_screenutil: ^5.6.0
 
 dev_dependencies:
   flutter_test:

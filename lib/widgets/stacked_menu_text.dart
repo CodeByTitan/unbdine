@@ -27,7 +27,7 @@ class StackedMenuText extends StatelessWidget {
                 offset: const Offset(0, 1),
               ),
             ],
-            color: Theme.of(context).appBarTheme.backgroundColor,
+            color: Theme.of(context).primaryColor,
           ),
           alignment: Alignment.center,
           child: Text(
