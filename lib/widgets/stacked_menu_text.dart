@@ -21,21 +21,22 @@ class StackedMenuText extends StatelessWidget {
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                spreadRadius: 2,
+                color: Colors.black.withOpacity(0.4),
+                spreadRadius: 5,
                 blurRadius: 20,
                 offset: const Offset(0, 1),
               ),
             ],
-            color: Theme.of(context).primaryColorDark,
+            color: Theme.of(context).appBarTheme.backgroundColor,
           ),
           alignment: Alignment.center,
-          child: const Text(
+          child: Text(
             "MENU",
             textScaleFactor: 1.3,
-            style: TextStyle(
-              letterSpacing: 35,
-            ),
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  letterSpacing: 35,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
         ),
       ),

@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 class LightPalette {
   static const MaterialColor swatchColor = MaterialColor(
-    0xFFfac213,
+    0xFFfcc827,
     <int, Color>{
-      50: Color(0xFFfde189),
-      100: Color(0xFFfcda71),
-      200: Color(0xFFfcd45a),
-      300: Color(0xFFfbce42),
-      400: Color(0xFFfbc82b),
-      500: Color(0xFFfac213),
-      600: Color(0xFFe1af11),
-      700: Color(0xFFc89b0f),
-      800: Color(0xFFaf880d),
-      900: Color(0xFF96740b),
+      50: Color(0xFFfee493),
+      100: Color(0xFFfdde7d),
+      200: Color(0xFFfdd968),
+      300: Color(0xFFfdd352),
+      400: Color(0xFFfcce3d),
+      500: Color(0xFFfcc827),
+      600: Color(0xFFe3b423),
+      700: Color(0xFFcaa01f),
+      800: Color(0xFFb08c1b),
+      900: Color(0xFF977817),
     },
   );
 }

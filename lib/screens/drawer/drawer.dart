@@ -45,9 +45,7 @@ class DefaultDrawer extends StatelessWidget {
           children: [
             divSizedBox,
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: const Icon(
                 Icons.history_rounded,
               ),
@@ -57,9 +55,7 @@ class DefaultDrawer extends StatelessWidget {
             ),
             divSizedBox,
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: const Icon(
                 Icons.check_circle_rounded,
               ),
@@ -69,9 +65,7 @@ class DefaultDrawer extends StatelessWidget {
             ),
             divSizedBox,
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: const Icon(
                 Icons.payment_rounded,
               ),
@@ -81,9 +75,7 @@ class DefaultDrawer extends StatelessWidget {
             ),
             divSizedBox,
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: const Icon(
                 Icons.info_rounded,
               ),
@@ -93,9 +85,7 @@ class DefaultDrawer extends StatelessWidget {
             ),
             divSizedBox,
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: const Icon(
                 Icons.feedback_rounded,
               ),
@@ -105,9 +95,7 @@ class DefaultDrawer extends StatelessWidget {
             ),
             divSizedBox,
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: const Icon(
                 Icons.star_rounded,
               ),
@@ -117,9 +105,7 @@ class DefaultDrawer extends StatelessWidget {
             ),
             const Spacer(),
             ListTile(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
+              onTap: () {},
               leading: Icon(
                 Icons.logout_rounded,
                 color: Theme.of(context).errorColor,
@@ -129,6 +115,7 @@ class DefaultDrawer extends StatelessWidget {
               ),
             ),
             divSizedBox,
+            const Divider(),
             Center(
               child: Text(
                 '$appName v$appVersion',

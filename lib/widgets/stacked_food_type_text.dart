@@ -23,7 +23,7 @@ class StackedFoodTypeText extends StatelessWidget {
             bottomLeft: Radius.circular(10),
             topLeft: Radius.circular(10),
           ),
-          color: Theme.of(context).primaryColorDark,
+          color: Theme.of(context).primaryColor,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
@@ -36,8 +36,11 @@ class StackedFoodTypeText extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           text,
-          textScaleFactor: 1.1,
-          style: Theme.of(context).textTheme.bodyText2,
+          textScaleFactor: 1.2,
+          style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                fontSize: 13,
+                fontWeight: FontWeight.bold,
+              ),
         ),
       ),
     );
