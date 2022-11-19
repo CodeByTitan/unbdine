@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../payment/payment_screen.dart';
 import '../../widgets/custom_icon_btn.dart';
 
 class TotalAmount extends StatelessWidget {
@@ -22,7 +23,7 @@ class TotalAmount extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Colors.amber[700],
+          color: Theme.of(context).primaryColor,
         ),
         child: SingleChildScrollView(
           child: SizedBox(
@@ -32,16 +33,28 @@ class TotalAmount extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('Sub Total'),
-                    Text('\$Amount'),
+                  children: [
+                    Text(
+                      'Sub Total',
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    Text(
+                      '\$Amount',
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text('Addons'),
-                    Text('\$Amount'),
+                  children: [
+                    Text(
+                      'Addons',
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                    Text(
+                      '\$Amount',
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
                   ],
                 ),
                 defSizedBox,
@@ -50,14 +63,14 @@ class TotalAmount extends StatelessWidget {
                   children: [
                     Text(
                       'Grand Total',
-                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
                     ),
                     Text(
                       '\$Amount',
-                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
@@ -75,14 +88,14 @@ class TotalAmount extends StatelessWidget {
                   children: [
                     Text(
                       'Total',
-                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
                     ),
                     Text(
                       '\$Amount',
-                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
@@ -93,7 +106,10 @@ class TotalAmount extends StatelessWidget {
                 CustomIconButton(
                   buttontext: 'Proceed to Pay',
                   buttonIcon: const Icon(Icons.payment),
-                  buttonFunction: () {},
+                  bottomPadding: 15,
+                  buttonFunction: () {
+                    Navigator.of(context).pushNamed(PaymentScreen.routeName);
+                  },
                 ),
               ],
             ),

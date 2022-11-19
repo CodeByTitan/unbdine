@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './bottompopup.dart';
 import '../../classes/food_class.dart';
 import '../../widgets/food_tile.dart';
 
@@ -46,6 +47,19 @@ class SubMenuBuilder extends StatelessWidget {
                   isAvailable: submenu[i].isAvailable,
                   shortDescription: submenu[i].shortDescription,
                   foodPrice: submenu[i].foodPrice,
+                  addToCart: () {
+                    showModalBottomSheet<dynamic>(
+                      isScrollControlled: true,
+                      backgroundColor:
+                          Theme.of(context).scaffoldBackgroundColor,
+                      context: context,
+                      builder: (context) => BottomPopUP(
+                        foodName: submenu[i].foodName,
+                        foodPrice: submenu[i].foodPrice,
+                        addons: submenu[i].addOns,
+                      ),
+                    );
+                  },
                 ),
               ),
             ),

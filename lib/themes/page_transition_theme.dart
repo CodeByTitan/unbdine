@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../helpers/custom_route.dart';
 
 PageTransitionsTheme pageTransitionTheme() {
-  return PageTransitionsTheme(
+  return const PageTransitionsTheme(
     builders: {
-      TargetPlatform.android: CustomPageTransitionBuilder(),
+      TargetPlatform.android: ZoomPageTransitionsBuilder(),
+      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
     },
   );
 }

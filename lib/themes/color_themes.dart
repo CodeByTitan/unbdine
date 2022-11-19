@@ -9,15 +9,15 @@ ThemeData lightTheme() {
     pageTransitionsTheme: pageTransitionTheme(),
     primarySwatch: LightPalette.swatchColor,
     primaryColor: LightPalette.swatchColor,
-    backgroundColor: const Color(0xFFFEF9A7),
+    backgroundColor: LightPalette.swatchColor.shade100,
     primaryColorDark: LightPalette.swatchColor.shade900,
     primaryColorLight: LightPalette.swatchColor.shade50,
-    scaffoldBackgroundColor: const Color(0xFFfef3d0),
-    highlightColor: const Color(0xFFF77E21),
+    scaffoldBackgroundColor: const Color(0xFFfef4d4),
+    highlightColor: Colors.orange,
     disabledColor: Colors.grey,
     errorColor: Colors.red,
     appBarTheme: AppBarTheme(
-      backgroundColor: const Color(0xFFfeedb8),
+      backgroundColor: LightPalette.swatchColor.shade600,
       foregroundColor: Colors.black,
       elevation: 2,
       titleTextStyle: GoogleFonts.cabin(
@@ -30,10 +30,6 @@ ThemeData lightTheme() {
     drawerTheme: const DrawerThemeData(
       width: 275,
       elevation: 2,
-    ),
-    buttonTheme: const ButtonThemeData(
-      height: 40,
-      buttonColor: Color(0xFF00C897),
     ),
     listTileTheme: const ListTileThemeData(
       enableFeedback: true,
@@ -59,6 +55,11 @@ ThemeData lightTheme() {
         foregroundColor: MaterialStateProperty.all(Colors.black),
       ),
     ),
+    timePickerTheme: const TimePickerThemeData(
+      dialTextColor: Colors.black,
+      backgroundColor: Colors.white,
+      hourMinuteTextColor: Colors.black,
+    ),
     brightness: Brightness.light,
     useMaterial3: true,
   );
@@ -69,15 +70,15 @@ ThemeData darkTheme() {
     pageTransitionsTheme: pageTransitionTheme(),
     primarySwatch: DarkPalette.swatchColor,
     primaryColor: DarkPalette.swatchColor,
-    backgroundColor: const Color(0xFF1B1B2F),
+    backgroundColor: DarkPalette.swatchColor.shade800,
     primaryColorDark: DarkPalette.swatchColor.shade900,
-    primaryColorLight: DarkPalette.swatchColor.shade50,
-    scaffoldBackgroundColor: const Color(0xFF0b1224),
-    highlightColor: const Color(0xFFF77E21),
+    primaryColorLight: DarkPalette.swatchColor.shade100,
+    scaffoldBackgroundColor: const Color(0xFF04070e),
+    highlightColor: Colors.orange,
     disabledColor: Colors.grey,
-    errorColor: const Color(0xFFE43F5A),
+    errorColor: Colors.red,
     appBarTheme: AppBarTheme(
-      backgroundColor: DarkPalette.swatchColor.shade400,
+      backgroundColor: DarkPalette.swatchColor.shade600,
       foregroundColor: Colors.white,
       elevation: 2,
       titleTextStyle: GoogleFonts.cabin(
@@ -91,37 +92,34 @@ ThemeData darkTheme() {
       width: 275,
       elevation: 2,
     ),
-    buttonTheme: const ButtonThemeData(
-      height: 40,
-      buttonColor: Color(0xFF00C897),
-    ),
     listTileTheme: const ListTileThemeData(
       enableFeedback: true,
-      textColor: Colors.white,
+      textColor: Color(0xFFe8e9ed),
     ),
     textTheme: TextTheme(
       bodyText1: GoogleFonts.comfortaa(
-        color: Colors.white,
+        color: const Color(0xFFe8e9ed),
       ),
       bodyText2: GoogleFonts.comfortaa(
-        color: Colors.white,
+        color: const Color(0xFFe8e9ed),
       ),
     ),
     iconTheme: const IconThemeData(
-      color: Colors.white,
+      color: Color(0xFFe8e9ed),
     ),
     primaryIconTheme: const IconThemeData(
-      color: Colors.black,
+      color: Color(0xFFe8e9ed),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Colors.grey[800]),
-        foregroundColor: MaterialStateProperty.all(Colors.white),
+        foregroundColor: MaterialStateProperty.all(const Color(0xFFe8e9ed)),
       ),
     ),
-    timePickerTheme: TimePickerThemeData(
-      dialTextColor: Colors.white70,
-      backgroundColor: Colors.grey[700],
+    timePickerTheme: const TimePickerThemeData(
+      dialTextColor: Color(0xFFe8e9ed),
+      backgroundColor: Colors.blueGrey,
+      hourMinuteTextColor: Colors.white,
     ),
     brightness: Brightness.dark,
     useMaterial3: true,

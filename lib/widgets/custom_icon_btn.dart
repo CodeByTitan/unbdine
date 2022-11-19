@@ -3,19 +3,24 @@ import 'package:flutter/material.dart';
 class CustomIconButton extends StatelessWidget {
   final String buttontext;
   final Icon buttonIcon;
+  final double bottomPadding;
   final VoidCallback buttonFunction;
-  const CustomIconButton(
-      {super.key,
-      required this.buttontext,
-      required this.buttonIcon,
-      required this.buttonFunction});
+  const CustomIconButton({
+    super.key,
+    required this.buttontext,
+    required this.buttonIcon,
+    required this.bottomPadding,
+    required this.buttonFunction,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: buttonFunction,
       child: Container(
-        margin: const EdgeInsets.only(bottom: 15),
+        margin: EdgeInsets.only(
+          bottom: bottomPadding,
+        ),
         height: 50,
         width: MediaQuery.of(context).size.width * 0.55,
         decoration: BoxDecoration(

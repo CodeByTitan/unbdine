@@ -24,9 +24,9 @@ class _RequiredInfoState extends State<RequiredInfo> {
         ) ??
         currentTime;
     int hourGap = pickedTime.hour - currentTime.hour;
+    int minGap = pickedTime.minute - currentTime.minute;
     bool isCorrectPickupTime =
-        ((hourGap * 60) + (pickedTime.minute - currentTime.minute) <= 180) &&
-            (hourGap > 0);
+        ((hourGap * 60) + (minGap) <= 180) && (hourGap >= 0) && (minGap >= 0);
 
     if (isCorrectPickupTime) {
       setState(() {
@@ -94,7 +94,6 @@ class _RequiredInfoState extends State<RequiredInfo> {
                   const SizedBox(
                     width: 10,
                   ),
-                  // TODO
                   GestureDetector(
                     onTap: _setPickupTime,
                     child: const Icon(

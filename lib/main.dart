@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import './screens/splash/splash_screen.dart';
 import './screens/cart/cart_screen.dart';
+import './screens/payment/payment_screen.dart';
 import './themes/color_themes.dart';
 import './widgets/error_screen.dart';
 
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme(),
       routes: {
         CartScreen.routeName: (ctx) => const CartScreen(),
+        PaymentScreen.routeName: (ctx) => const PaymentScreen(),
       },
     );
   }

@@ -7,11 +7,15 @@ class MainMenuTile extends StatelessWidget {
   final String text;
   final String imagePath;
   final VoidCallback onClicked;
+  final double miniTextStartPos; //-200
+  final double miniTextEndPos; // 0
   const MainMenuTile({
     Key? key,
     required this.text,
     required this.imagePath,
     required this.onClicked,
+    required this.miniTextStartPos,
+    required this.miniTextEndPos,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -97,9 +101,26 @@ class MainMenuTile extends StatelessWidget {
             ),
           ),
           // Title
-          StackedFoodTypeText(
-            text: text,
-          )
+
+          TweenAnimationBuilder(
+            tween: Tween<double>(
+              begin: miniTextStartPos,
+              end: miniTextEndPos,
+            ),
+            curve: Curves.easeInOut,
+            duration: const Duration(
+              milliseconds: 750,
+            ),
+            builder: (_, double val, child) {
+              return Positioned(
+                right: val,
+                child: child!,
+              );
+            },
+            child: StackedFoodTypeText(
+              text: text,
+            ),
+          ),
         ],
       ),
     );
