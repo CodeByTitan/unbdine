@@ -17,20 +17,61 @@ PageController pageController = PageController(
   initialPage: 0,
   keepPage: true,
 );
+late double menuTextStartPos;
+late double menuTextEndPos;
+late double miniTextStartPos;
+late double miniTextEndPos;
 
 class _BodyState extends State<Body> {
   void changepage(int i) {
-    pageController.animateToPage(
-      i,
-      duration: const Duration(
-        seconds: 1,
-      ),
-      curve: Curves.easeInOut,
+    setState(() {
+      menuTextStartPos = 0;
+      menuTextEndPos = -50;
+      miniTextStartPos = 0;
+      miniTextEndPos = -200;
+    });
+    Future.delayed(
+      const Duration(milliseconds: 100),
+      () {
+        pageController.animateToPage(
+          i,
+          duration: const Duration(
+            seconds: 1,
+          ),
+          curve: Curves.easeInOutCirc,
+        );
+      },
     );
   }
 
   void backtoHome() {
-    changepage(0);
+    setState(() {
+      menuTextStartPos = -50;
+      menuTextEndPos = 0;
+      miniTextStartPos = -200;
+      miniTextEndPos = 0;
+    });
+    Future.delayed(
+      const Duration(milliseconds: 100),
+      () {
+        pageController.animateToPage(
+          0,
+          duration: const Duration(
+            seconds: 1,
+          ),
+          curve: Curves.easeOut,
+        );
+      },
+    );
+  }
+
+  @override
+  void initState() {
+    menuTextStartPos = -50;
+    menuTextEndPos = 0;
+    miniTextStartPos = -200;
+    miniTextEndPos = 0;
+    super.initState();
   }
 
   @override
@@ -38,6 +79,16 @@ class _BodyState extends State<Body> {
     return Stack(
       children: [
         PageView(
+          onPageChanged: (value) {
+            if (value == 0) {
+              setState(() {
+                menuTextStartPos = -50;
+                menuTextEndPos = 0;
+                miniTextStartPos = -200;
+                miniTextEndPos = 0;
+              });
+            }
+          },
           controller: pageController,
           scrollDirection: Axis.vertical,
           children: [
@@ -51,6 +102,10 @@ class _BodyState extends State<Body> {
               toDinner: () {
                 changepage(3);
               },
+              menuTextStartPos: menuTextStartPos,
+              menuTextEndPos: menuTextEndPos,
+              miniTextStartPos: miniTextStartPos,
+              miniTextEndPos: miniTextEndPos,
             ),
             SubMenuBuilder(
               subMenuIndex: 0,
