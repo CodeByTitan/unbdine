@@ -77,7 +77,6 @@ class TotalAmount extends StatelessWidget {
                     ),
                   ],
                 ),
-                defSizedBox,
                 const Divider(
                   color: Colors.blueGrey,
                   thickness: 0.4,

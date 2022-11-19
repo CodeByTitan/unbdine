@@ -3,16 +3,7 @@ import 'package:flutter/material.dart';
 class DefaultDrawer extends StatelessWidget {
   const DefaultDrawer({
     Key? key,
-    required this.appName,
-    required this.appVersion,
-    required this.userName,
-    required this.userAvatar,
   }) : super(key: key);
-
-  final String appName;
-  final String appVersion;
-  final String userName;
-  final String userAvatar;
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +13,11 @@ class DefaultDrawer extends StatelessWidget {
     return Drawer(
       child: Scaffold(
         appBar: AppBar(
-          leading: userAvatar.isEmpty
-              ? const Icon(
-                  Icons.person_rounded,
-                )
-              : null,
-          title: Text(
-            userName.isNotEmpty ? userName : 'user name',
+          leading: const Icon(
+            Icons.person_rounded,
+          ),
+          title: const Text(
+            'user name',
             overflow: TextOverflow.ellipsis,
             softWrap: true,
           ),
@@ -114,15 +103,6 @@ class DefaultDrawer extends StatelessWidget {
                 'Logout',
               ),
             ),
-            divSizedBox,
-            const Divider(),
-            Center(
-              child: Text(
-                '$appName v$appVersion',
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
-            ),
-            divSizedBox,
           ],
         ),
       ),

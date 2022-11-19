@@ -12,13 +12,11 @@ ThemeData lightTheme() {
     backgroundColor: LightPalette.swatchColor.shade100,
     primaryColorDark: LightPalette.swatchColor.shade900,
     primaryColorLight: LightPalette.swatchColor.shade50,
-    scaffoldBackgroundColor: const Color(0xFFfef4d4),
+    scaffoldBackgroundColor: const Color.fromARGB(255, 252, 252, 252),
     highlightColor: Colors.orange,
     disabledColor: Colors.grey,
     errorColor: Colors.red,
     appBarTheme: AppBarTheme(
-      backgroundColor: LightPalette.swatchColor.shade600,
-      foregroundColor: Colors.black,
       elevation: 2,
       titleTextStyle: GoogleFonts.cabin(
         color: Colors.black,

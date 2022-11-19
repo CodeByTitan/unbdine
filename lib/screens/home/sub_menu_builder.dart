@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './bottompopup.dart';
+import 'modal_bottom_sheet.dart';
 import '../../classes/food_class.dart';
 import '../../widgets/food_tile.dart';
 

@@ -3,7 +3,6 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 import './order_details.dart';
 import './totalamt_card.dart';
-import '../../widgets/back_screen_button.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -22,7 +21,7 @@ class CartScreen extends StatelessWidget {
         ) {
           return Scaffold(
             appBar: AppBar(
-              leading: const BackScreenButton(),
+              centerTitle: true,
               title: const Text('Backpack/Cart'),
             ),
             body: Stack(

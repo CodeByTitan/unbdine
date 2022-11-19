@@ -4,21 +4,18 @@ import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lottie/lottie.dart';
 
 import '../home/home.dart';
 
-class AuthenticationScreen extends StatefulHookConsumerWidget {
+class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
 
   @override
-  ConsumerState<AuthenticationScreen> createState() =>
-      _AuthenticationScreenState();
+  State<AuthenticationScreen> createState() => _AuthenticationScreenState();
 }
 
-class _AuthenticationScreenState extends ConsumerState<AuthenticationScreen> {
+class _AuthenticationScreenState extends State<AuthenticationScreen> {
   Future<void> performLogin(String provider, List<String> scopes,
       Map<String, String> parameters) async {
     try {
