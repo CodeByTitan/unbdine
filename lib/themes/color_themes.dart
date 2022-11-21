@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import './color_palettes.dart';
 import './page_transition_theme.dart';
@@ -16,9 +15,9 @@ ThemeData lightTheme() {
     highlightColor: Colors.orange,
     disabledColor: Colors.grey,
     errorColor: Colors.red,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       elevation: 2,
-      titleTextStyle: GoogleFonts.cabin(
+      titleTextStyle: TextStyle(
         color: Colors.black,
         letterSpacing: 1.5,
         wordSpacing: 1.2,
@@ -33,11 +32,11 @@ ThemeData lightTheme() {
       enableFeedback: true,
       textColor: Colors.black,
     ),
-    textTheme: TextTheme(
-      bodyText1: GoogleFonts.comfortaa(
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(
         color: Colors.black,
       ),
-      bodyText2: GoogleFonts.comfortaa(
+      bodyText2: TextStyle(
         color: Colors.white,
       ),
     ),
@@ -79,7 +78,7 @@ ThemeData darkTheme() {
       backgroundColor: DarkPalette.swatchColor.shade600,
       foregroundColor: Colors.white,
       elevation: 2,
-      titleTextStyle: GoogleFonts.cabin(
+      titleTextStyle: const TextStyle(
         color: Colors.white,
         letterSpacing: 1.5,
         wordSpacing: 1.2,
@@ -94,12 +93,12 @@ ThemeData darkTheme() {
       enableFeedback: true,
       textColor: Color(0xFFe8e9ed),
     ),
-    textTheme: TextTheme(
-      bodyText1: GoogleFonts.comfortaa(
-        color: const Color(0xFFe8e9ed),
+    textTheme: const TextTheme(
+      bodyText1: TextStyle(
+        color: Color(0xFFe8e9ed),
       ),
-      bodyText2: GoogleFonts.comfortaa(
-        color: const Color(0xFFe8e9ed),
+      bodyText2: TextStyle(
+        color: Color(0xFFe8e9ed),
       ),
     ),
     iconTheme: const IconThemeData(

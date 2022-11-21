@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 
-import 'screens/splash_screen.dart';
+import './screens/auth/auth_screen.dart';
+import './themes/color_themes.dart';
+import './screens/home/home.dart';
+import './screens/university_selector/unv_home_screen.dart';
 import './screens/cart/cart_screen.dart';
 import './screens/payment/payment_screen.dart';
-import './themes/color_themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,9 +19,7 @@ Future<void> main() async {
     ],
   );
   runApp(
-    Phoenix(
-      child: const MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
@@ -31,10 +30,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const UnSelScreen(),
       theme: lightTheme(),
       darkTheme: darkTheme(),
       routes: {
+        AuthenticationScreen.routeName: (ctx) => const AuthenticationScreen(),
+        HomeScreen.routeName: (ctx) => const HomeScreen(),
         CartScreen.routeName: (ctx) => const CartScreen(),
         PaymentScreen.routeName: (ctx) => const PaymentScreen(),
       },

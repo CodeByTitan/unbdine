@@ -3,13 +3,13 @@ import 'package:flutter/services.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
 
 import '../home/home.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
+  static const routeName = '/auth-screen';
 
   @override
   State<AuthenticationScreen> createState() => _AuthenticationScreenState();
@@ -55,55 +55,37 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                   opacity: 0.7,
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 30,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          height: 300,
-                          width: MediaQuery.of(context).size.width,
-                          alignment: Alignment.center,
-                          child: Lottie.asset(
-                            'assets/animations/logInFood.json',
-                            fit: BoxFit.cover,
-                            filterQuality: FilterQuality.high,
-                            frameRate: FrameRate(30),
-                          ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.center,
+                        child: Lottie.asset(
+                          'assets/animations/logInFood.json',
+                          filterQuality: FilterQuality.high,
+                          frameRate: FrameRate(30),
                         ),
-                        Positioned(
-                          left: 0,
-                          right: 0,
-                          bottom: 5,
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Enjoy your meal',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                    fontSize: 24,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 200),
-                    Container(
-                      padding: const EdgeInsets.all(17),
-                      width: MediaQuery.of(context).size.width,
+                      ),
+                    ],
+                  ),
+                  // sign in Button
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(HomeScreen.routeName);
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.only(
+                        bottom: 20,
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.7,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(
                           30,
                         ),
@@ -119,96 +101,111 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
-                            FontAwesomeIcons.microsoft,
-                            color: Theme.of(context).primaryIconTheme.color,
+                          SizedBox(
+                            height: 35,
+                            width: 35,
+                            child: Image.asset('assets/icons/microsoft.png'),
                           ),
                           const SizedBox(
-                            width: 10,
+                            width: 15,
                           ),
-                          Text(
-                            "Sign In with Microsoft Account",
-                            style:
-                                Theme.of(context).textTheme.bodyText1!.copyWith(
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Sign in with",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1!
+                                    .copyWith(
+                                      fontSize: 12,
+                                    ),
+                              ),
+                              Text(
+                                "Microsoft Account",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1!
+                                    .copyWith(
                                       fontWeight: FontWeight.bold,
                                     ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomeScreen(),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          "Home",
-                        ),
+                  ),
+
+                  /* Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "Home",
                       ),
                     ),
+                  ), */
 
-                    //  Center(
-                    //   child: Text(""),
-                    //   //  snapshot.data == null ? "Logged out" : "Logged In"),
-                    // ),
-                    // if (snapshot.data == null ||
-                    //     snapshot.data?.isAnonymous == true) ...[
-                    //   ElevatedButton(
-                    //     onPressed: () async {
-                    //       debugPrint(
-                    //           "PRESSED.........................................................................");
-                    //       await performLogin("microsoft.com", ["email"],
-                    //           {'tenant': '2f983bf7-f495-4e9a-a7a0-0f0c89c9062c'}
-                    //           //  {"locale": "en"}
-                    //           );
-                    //     },
-                    //     child:  Text(
-                    //       "Sign in using  Microsoft",
-                    //     ),
-                    //   ),
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     Navigator.push(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //         builder: (context) =>  DashboardScreen(),
-                    //       ),
-                    //     );
-                    //   },
-                    //   child:  Text(
-                    //     "Home",
-                    //   ),
-                    // ),
-                    // ],
-                    // if (snapshot.data != null) ...[
-                    //   ElevatedButton(
-                    //     onPressed: () async {
-                    //       await performLink(
-                    //           "microsoft.com", ["email"], {"locale": "en"});
-                    //     },
-                    //     child:  Text(
-                    //       "Link Sign in By Microsoft",
-                    //     ),
-                    //   ),
-                    //   ElevatedButton(
-                    //     onPressed: () async {
-                    //       await FirebaseAuth.instance.signOut();
-                    //     },
-                    //     child:  Text(
-                    //       "Logout",
-                    //     ),
-                    //   ),
-                    // ],
-                  ],
-                ),
+                  //  Center(
+                  //   child: Text(""),
+                  //   //  snapshot.data == null ? "Logged out" : "Logged In"),
+                  // ),
+                  // if (snapshot.data == null ||
+                  //     snapshot.data?.isAnonymous == true) ...[
+                  //   ElevatedButton(
+                  //     onPressed: () async {
+                  //       debugPrint(
+                  //           "PRESSED.........................................................................");
+                  //       await performLogin("microsoft.com", ["email"],
+                  //           {'tenant': '2f983bf7-f495-4e9a-a7a0-0f0c89c9062c'}
+                  //           //  {"locale": "en"}
+                  //           );
+                  //     },
+                  //     child:  Text(
+                  //       "Sign in using  Microsoft",
+                  //     ),
+                  //   ),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) =>  DashboardScreen(),
+                  //       ),
+                  //     );
+                  //   },
+                  //   child:  Text(
+                  //     "Home",
+                  //   ),
+                  // ),
+                  // ],
+                  // if (snapshot.data != null) ...[
+                  //   ElevatedButton(
+                  //     onPressed: () async {
+                  //       await performLink(
+                  //           "microsoft.com", ["email"], {"locale": "en"});
+                  //     },
+                  //     child:  Text(
+                  //       "Link Sign in By Microsoft",
+                  //     ),
+                  //   ),
+                  //   ElevatedButton(
+                  //     onPressed: () async {
+                  //       await FirebaseAuth.instance.signOut();
+                  //     },
+                  //     child:  Text(
+                  //       "Logout",
+                  //     ),
+                  //   ),
+                  // ],
+                ],
               ),
             );
           },
