@@ -94,7 +94,9 @@ class DefaultDrawer extends StatelessWidget {
             ),
             const Spacer(),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed('/');
+              },
               leading: Icon(
                 Icons.logout_rounded,
                 color: Theme.of(context).errorColor,

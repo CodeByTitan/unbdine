@@ -77,7 +77,7 @@ class _BottomPopUPState extends State<BottomPopUP> {
               margin: const EdgeInsets.all(7.5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7.5),
-                color: Theme.of(context).backgroundColor,
+                color: Theme.of(context).scaffoldBackgroundColor,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -217,7 +217,7 @@ class FoodChoiceListTile extends StatelessWidget {
       margin: const EdgeInsets.all(7.5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7.5),
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

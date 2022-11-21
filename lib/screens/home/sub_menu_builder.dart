@@ -4,7 +4,7 @@ import 'modal_bottom_sheet.dart';
 import '../../classes/food_class.dart';
 import '../../widgets/food_tile.dart';
 
-class SubMenuBuilder extends StatelessWidget {
+class SubMenuBuilder extends StatefulWidget {
   final int subMenuIndex;
   final List menu;
   final List<Food> submenu;
@@ -16,6 +16,26 @@ class SubMenuBuilder extends StatelessWidget {
     required this.submenu,
     required this.backToMenu,
   });
+
+  @override
+  State<SubMenuBuilder> createState() => _SubMenuBuilderState();
+}
+
+class _SubMenuBuilderState extends State<SubMenuBuilder>
+    with TickerProviderStateMixin {
+  late AnimationController animationController;
+
+  startAnimation() {
+    animationController = BottomSheet.createAnimationController(this);
+    animationController.duration = const Duration(seconds: 2);
+    animationController.reverseDuration = const Duration(seconds: 1);
+  }
+
+  @override
+  initState() {
+    startAnimation();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,24 +61,25 @@ class SubMenuBuilder extends StatelessWidget {
             child: ListView.builder(
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
-              itemCount: submenu.length,
+              itemCount: widget.submenu.length,
               itemBuilder: (_, i) => SizedBox(
                 width: 100,
                 child: FoodTile(
-                  foodName: submenu[i].foodName,
-                  isAvailable: submenu[i].isAvailable,
-                  shortDescription: submenu[i].shortDescription,
-                  foodPrice: submenu[i].foodPrice,
+                  foodName: widget.submenu[i].foodName,
+                  isAvailable: widget.submenu[i].isAvailable,
+                  shortDescription: widget.submenu[i].shortDescription,
+                  foodPrice: widget.submenu[i].foodPrice,
                   addToCart: () {
                     showModalBottomSheet<dynamic>(
                       isScrollControlled: true,
+                      transitionAnimationController: animationController,
                       backgroundColor:
                           Theme.of(context).scaffoldBackgroundColor,
                       context: context,
                       builder: (context) => BottomPopUP(
-                        foodName: submenu[i].foodName,
-                        foodPrice: submenu[i].foodPrice,
-                        addons: submenu[i].addOns,
+                        foodName: widget.submenu[i].foodName,
+                        foodPrice: widget.submenu[i].foodPrice,
+                        addons: widget.submenu[i].addOns,
                       ),
                     );
                   },
@@ -85,7 +106,8 @@ class SubMenuBuilder extends StatelessWidget {
                         Colors.black.withOpacity(0.5),
                         BlendMode.darken,
                       ),
-                      image: ExactAssetImage(menu[subMenuIndex][1]),
+                      image:
+                          ExactAssetImage(widget.menu[widget.subMenuIndex][1]),
                     ),
                   ),
                   padding: const EdgeInsets.only(
@@ -94,7 +116,7 @@ class SubMenuBuilder extends StatelessWidget {
                   ),
                   alignment: Alignment.bottomLeft,
                   child: Text(
-                    menu[subMenuIndex][0],
+                    widget.menu[widget.subMenuIndex][0],
                     style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           color: Colors.white,
                           fontFamily: 'BywayEMod',
@@ -110,7 +132,7 @@ class SubMenuBuilder extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: GestureDetector(
-            onTap: backToMenu,
+            onTap: widget.backToMenu,
             child: Container(
               width: 100,
               padding: const EdgeInsets.all(5),

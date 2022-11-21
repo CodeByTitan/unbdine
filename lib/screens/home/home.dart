@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:unbdine/screens/cart/cart_screen.dart';
 
 import '../../data/dummy_data.dart';
 import '../drawer.dart';
@@ -98,6 +99,14 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text(
             'Good ${greeting()} user!',
           ),
+          /* actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(CartScreen.routeName);
+              },
+              icon: const Icon(Icons.backpack),
+            ),
+          ], */
         ),
         drawer: const DefaultDrawer(),
         body: Stack(
