@@ -20,7 +20,7 @@ class MainMenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.26,
+      height: MediaQuery.of(context).size.height * 0.28,
       child: Stack(
         children: [
           // Image
@@ -75,13 +75,14 @@ class MainMenuTile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      children: const [
-                        SizedBox(
+                      children: [
+                        const SizedBox(
                           width: 60,
                         ),
                         Text(
                           'Explore',
-                          textScaleFactor: 1.5,
+                          textScaleFactor: 1.1,
+                          style: Theme.of(context).textTheme.bodyText2,
                         ),
                       ],
                     ),

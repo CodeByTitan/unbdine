@@ -28,16 +28,33 @@ class _BottomPopUPState extends State<BottomPopUP> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 0.95,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // food name
           Container(
             padding: const EdgeInsets.all(5),
             margin: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColorDark,
-              borderRadius: BorderRadius.circular(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.foodName,
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                GestureDetector(
+                  child: Icon(
+                    Icons.close,
+                    color: Theme.of(context).primaryIconTheme.color,
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
             ),
-            child: Text(widget.foodName),
           ),
           // cards
           Expanded(
@@ -193,20 +210,27 @@ class FoodChoiceListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 10,
+      ),
       margin: const EdgeInsets.all(7.5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7.5),
         color: Theme.of(context).backgroundColor,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             choiceName,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  fontSize: 18,
+                ),
           ),
+          const Divider(),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'option 1',
@@ -219,7 +243,7 @@ class FoodChoiceListTile extends StatelessWidget {
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'option 2',
@@ -232,7 +256,7 @@ class FoodChoiceListTile extends StatelessWidget {
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'option 3',

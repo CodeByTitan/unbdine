@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../data/dummy_data.dart';
-import '../../widgets/custom_icon_btn.dart';
-import '../cart/cart_screen.dart';
 import '../drawer.dart';
 import './main_menu.dart';
 import './sub_menu_builder.dart';
@@ -36,7 +35,7 @@ String greeting() {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void changepage(int i) {
+  void changepage(int i, int seconds) {
     setState(() {
       menuTextStartPos = 0;
       menuTextEndPos = -50;
@@ -48,16 +47,16 @@ class _HomeScreenState extends State<HomeScreen> {
       () {
         pageController.animateToPage(
           i,
-          duration: const Duration(
-            seconds: 1,
+          duration: Duration(
+            seconds: seconds,
           ),
-          curve: Curves.easeInOutCirc,
+          curve: Curves.easeInOut,
         );
       },
     );
   }
 
-  void backtoHome() {
+  void backtoHome(int seconds) {
     setState(() {
       menuTextStartPos = -50;
       menuTextEndPos = 0;
@@ -69,10 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
       () {
         pageController.animateToPage(
           0,
-          duration: const Duration(
-            seconds: 1,
+          duration: Duration(
+            seconds: seconds,
           ),
-          curve: Curves.easeOut,
+          curve: Curves.easeInOut,
         );
       },
     );
@@ -91,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+        SystemNavigator.pop();
         return false;
       },
       child: Scaffold(
@@ -98,7 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text(
             'Good ${greeting()} user!',
           ),
-          centerTitle: true,
         ),
         drawer: const DefaultDrawer(),
         body: Stack(
@@ -119,13 +118,13 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 MainMenu(
                   toBreakfast: () {
-                    changepage(1);
+                    changepage(1, 1);
                   },
                   toGrill: () {
-                    changepage(2);
+                    changepage(2, 2);
                   },
                   toDinner: () {
-                    changepage(3);
+                    changepage(3, 2);
                   },
                   menuTextStartPos: menuTextStartPos,
                   menuTextEndPos: menuTextEndPos,
@@ -136,33 +135,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   subMenuIndex: 0,
                   menu: food,
                   submenu: breakfast,
-                  backToMenu: backtoHome,
+                  backToMenu: () {
+                    backtoHome(1);
+                  },
                 ),
                 SubMenuBuilder(
                   subMenuIndex: 1,
                   menu: food,
                   submenu: grill,
-                  backToMenu: backtoHome,
+                  backToMenu: () {
+                    backtoHome(2);
+                  },
                 ),
                 SubMenuBuilder(
                   subMenuIndex: 2,
                   menu: food,
                   submenu: dinner,
-                  backToMenu: backtoHome,
+                  backToMenu: () {
+                    backtoHome(2);
+                  },
                 ),
               ],
-            ),
-            // My Cart Button
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: CustomIconButton(
-                buttontext: 'My Cart',
-                buttonIcon: const Icon(Icons.shopping_cart),
-                bottomPadding: 15,
-                buttonFunction: () {
-                  Navigator.of(context).pushNamed(CartScreen.routeName);
-                },
-              ),
             ),
           ],
         ),

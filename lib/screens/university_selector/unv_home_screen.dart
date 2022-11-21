@@ -27,21 +27,23 @@ class UnSelScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                 ),
                 RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     text: 'University',
-                    style: TextStyle(
-                      fontSize: 28,
-                      letterSpacing: 5,
-                    ),
+                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          fontSize: 28,
+                          letterSpacing: 2,
+                          fontFamily: 'BywayEMod',
+                        ),
                     children: <TextSpan>[
                       TextSpan(
-                        text: 'DINE',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red,
-                          fontSize: 28,
-                          letterSpacing: 8,
-                        ),
+                        text: ' DINE',
+                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red,
+                              fontSize: 28,
+                              letterSpacing: 3,
+                              fontFamily: 'BywayEMod',
+                            ),
                       ),
                     ],
                   ),
@@ -52,7 +54,10 @@ class UnSelScreen extends StatelessWidget {
                   frameRate: FrameRate(30),
                   height: MediaQuery.of(context).size.height * 0.5,
                 ),
-                const Text('Don\'t wait for Food, let the food wait'),
+                Text(
+                  'Don\'t wait for Food, let the food wait',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
               ],
             ),
             TweenAnimationBuilder(
@@ -102,19 +107,22 @@ class UnSelScreen extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Search Your',
-                            style: TextStyle(
-                              letterSpacing: 3,
-                            ),
+                            style:
+                                Theme.of(context).textTheme.bodyText2!.copyWith(
+                                      letterSpacing: 3,
+                                    ),
                           ),
                           Text(
                             'University',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style:
+                                Theme.of(context).textTheme.bodyText2!.copyWith(
+                                      fontSize: 24,
+                                      letterSpacing: 2,
+                                      fontWeight: FontWeight.w800,
+                                    ),
                           ),
                         ],
                       ),

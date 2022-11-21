@@ -16,12 +16,16 @@ ThemeData lightTheme() {
     disabledColor: Colors.grey,
     errorColor: Colors.red,
     appBarTheme: const AppBarTheme(
-      elevation: 2,
+      color: Color.fromARGB(255, 252, 252, 252),
+      titleSpacing: 0,
       titleTextStyle: TextStyle(
         color: Colors.black,
         letterSpacing: 1.5,
-        wordSpacing: 1.2,
-        fontSize: 20,
+        wordSpacing: 1,
+        fontSize: 24,
+        overflow: TextOverflow.visible,
+        fontFamily: 'Helvetica_Neue',
+        fontWeight: FontWeight.w800,
       ),
     ),
     drawerTheme: const DrawerThemeData(
@@ -34,9 +38,11 @@ ThemeData lightTheme() {
     ),
     textTheme: const TextTheme(
       bodyText1: TextStyle(
+        fontFamily: 'Helvetica_Neue',
         color: Colors.black,
       ),
       bodyText2: TextStyle(
+        fontFamily: 'Helvetica_Neue',
         color: Colors.white,
       ),
     ),
@@ -74,15 +80,17 @@ ThemeData darkTheme() {
     highlightColor: Colors.orange,
     disabledColor: Colors.grey,
     errorColor: Colors.red,
-    appBarTheme: AppBarTheme(
-      backgroundColor: DarkPalette.swatchColor.shade600,
-      foregroundColor: Colors.white,
-      elevation: 2,
-      titleTextStyle: const TextStyle(
+    appBarTheme: const AppBarTheme(
+      color: Color(0xFF04070e),
+      titleSpacing: 0,
+      titleTextStyle: TextStyle(
         color: Colors.white,
         letterSpacing: 1.5,
-        wordSpacing: 1.2,
-        fontSize: 20,
+        wordSpacing: 1,
+        fontSize: 24,
+        overflow: TextOverflow.visible,
+        fontFamily: 'Helvetica_Neue',
+        fontWeight: FontWeight.w800,
       ),
     ),
     drawerTheme: const DrawerThemeData(
@@ -95,9 +103,11 @@ ThemeData darkTheme() {
     ),
     textTheme: const TextTheme(
       bodyText1: TextStyle(
+        fontFamily: 'Helvetica_Neue',
         color: Color(0xFFe8e9ed),
       ),
       bodyText2: TextStyle(
+        fontFamily: 'Helvetica_Neue',
         color: Color(0xFFe8e9ed),
       ),
     ),

@@ -12,7 +12,7 @@ class StackedMenuText extends StatelessWidget {
       child: RotatedBox(
         quarterTurns: 3,
         child: Container(
-          width: MediaQuery.of(context).size.height * (3 / 7),
+          width: MediaQuery.of(context).size.height * (3 / 8),
           height: MediaQuery.of(context).size.width * 0.12,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
@@ -33,9 +33,9 @@ class StackedMenuText extends StatelessWidget {
           child: Text(
             "MENU",
             textScaleFactor: 1.3,
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                  letterSpacing: 35,
-                  fontWeight: FontWeight.bold,
+            style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                  letterSpacing: 20,
+                  fontFamily: 'BywayEMod',
                 ),
           ),
         ),

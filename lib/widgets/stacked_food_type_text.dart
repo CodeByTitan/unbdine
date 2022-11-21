@@ -16,8 +16,8 @@ class StackedFoodTypeText extends StatelessWidget {
         margin: const EdgeInsets.only(
           top: 20,
         ),
-        height: 40,
-        width: 150,
+        height: 35,
+        width: 120,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(10),
@@ -39,7 +39,7 @@ class StackedFoodTypeText extends StatelessWidget {
           textScaleFactor: 1.2,
           style: Theme.of(context).textTheme.bodyText1!.copyWith(
                 fontSize: 13,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w800,
               ),
         ),
       ),

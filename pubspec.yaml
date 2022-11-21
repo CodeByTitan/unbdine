@@ -38,3 +38,20 @@ flutter:
     - assets/icons/
     - assets/animations/
     - assets/images/
+
+  fonts:
+    - family: Helvetica_Neue
+      fonts:
+        - asset: assets/fonts/Helvetica_Neue_Light.ttf
+        - asset: assets/fonts/Helvetica_Neue_Italic.ttf
+          style: italic
+        - asset: assets/fonts/Helvetica_Neue_Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Helvetica_Neue_Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Helvetica_Neue_Bold.ttf
+          weight: 800
+    - family: BywayEMod
+      fonts:
+        - asset: assets/fonts/BywayEMod.ttf
+        
