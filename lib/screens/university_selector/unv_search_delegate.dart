@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/classes/abstract_search_delegate.dart';
 import '../auth/auth_screen.dart';
 import '../../classes/university.dart';
+import '../../classes/abstract_search_delegate.dart';
 
 class UNVSearchDelegate extends AbstractPlatformSearchDelegate {
   final List<University> universityList;

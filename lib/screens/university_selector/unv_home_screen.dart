@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:unbdine/classes/abstract_search_delegate.dart';
 
+import '../../classes/abstract_search_delegate.dart';
 import '../../data/university_data.dart';
 import '../university_selector/unv_search_delegate.dart';
 
@@ -57,7 +57,9 @@ class UnSelScreen extends StatelessWidget {
                 ),
                 Text(
                   'Don\'t wait for Food, let the food wait',
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        color: Colors.black,
+                      ),
                 ),
               ],
             ),

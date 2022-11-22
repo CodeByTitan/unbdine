@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unbdine/screens/cart/required_info.dart';
 
 import '../../data/dummy_data.dart';
+import './required_info.dart';
 
 class OrderDetails extends StatelessWidget {
   final bool isKeyboardVisible;
