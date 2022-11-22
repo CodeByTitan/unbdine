@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:unbdine/classes/abstract_search_delegate.dart';
 import '../auth/auth_screen.dart';
 import '../../classes/university.dart';
 
-class UNVSearchDelegate extends SearchDelegate {
+class UNVSearchDelegate extends AbstractPlatformSearchDelegate {
   final List<University> universityList;
 
   UNVSearchDelegate(
     this.universityList,
   );
 
-  @override
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
@@ -21,7 +21,6 @@ class UNVSearchDelegate extends SearchDelegate {
     ];
   }
 
-  @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
       icon: const Icon(Icons.arrow_back),
@@ -64,6 +63,53 @@ class UNVSearchDelegate extends SearchDelegate {
     return SearchListBuilder(
       matchedList:
           (query.isEmpty) ? suggestedUniversityList : matchedUniversityList,
+    );
+  }
+
+  @override
+  Widget buildScaffold(Widget? body, BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Search University',
+          ),
+          leading: buildLeading(context),
+        ),
+        body: Stack(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(
+                left: 25,
+              ),
+              child: ListTile(
+                title: TextField(
+                  controller: queryTextController,
+                  focusNode: focusNode,
+                  textInputAction: TextInputAction.search,
+                  onSubmitted: (String _) {
+                    showResults(context);
+                  },
+                  /* decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ), */
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                trailing: Stack(children: buildActions(context)!),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                top: 75,
+              ),
+              height: MediaQuery.of(context).size.height * 0.45,
+              child: body,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

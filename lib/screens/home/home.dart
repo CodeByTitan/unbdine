@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:unbdine/screens/cart/cart_screen.dart';
 
 import '../../data/dummy_data.dart';
 import '../drawer.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:unbdine/classes/abstract_search_delegate.dart';
 
 import '../../data/university_data.dart';
 import '../university_selector/unv_search_delegate.dart';
@@ -78,7 +79,7 @@ class UnSelScreen extends StatelessWidget {
               },
               child: GestureDetector(
                 onTap: () {
-                  showSearch(
+                  showPlatformSearch(
                     context: context,
                     delegate: UNVSearchDelegate(universityList),
                   );
