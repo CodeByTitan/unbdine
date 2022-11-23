@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../data/dummy_data.dart';
+import '../../data/cart_data.dart';
 import './required_info.dart';
 
 class OrderDetails extends StatelessWidget {
@@ -18,7 +18,7 @@ class OrderDetails extends StatelessWidget {
         physics: isKeyboardVisible
             ? const NeverScrollableScrollPhysics()
             : const BouncingScrollPhysics(),
-        itemCount: orderedFood.length,
+        itemCount: myCart.length,
         itemBuilder: (_, i) {
           return Center(
             child: Column(
@@ -64,7 +64,7 @@ class OrderDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  '${orderedFood[i].quantity}',
+                                  '${myCart[i].quantity}',
                                   style: Theme.of(context).textTheme.bodyText1,
                                 ),
                                 IconButton(
@@ -82,11 +82,11 @@ class OrderDetails extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                orderedFood[i].foodName,
+                                myCart[i].foodName,
                                 style: Theme.of(context).textTheme.bodyText1,
                               ),
                               Text(
-                                '\$ ${orderedFood[i].foodPrice}',
+                                '\$ ${myCart[i].foodPrice}',
                                 style: Theme.of(context).textTheme.bodyText1,
                               ),
                             ],
@@ -123,12 +123,12 @@ class OrderDetails extends StatelessWidget {
                                 itemBuilder: (_, j) => Padding(
                                   padding: const EdgeInsets.all(3),
                                   child: Text(
-                                    '${orderedFood[i].addons[j].addonName}, ',
+                                    '${myCart[i].addons[j].addonName}, ',
                                     style:
                                         Theme.of(context).textTheme.bodyText1,
                                   ),
                                 ),
-                                itemCount: orderedFood[i].addons.length,
+                                itemCount: myCart[i].addons.length,
                               ),
                             ),
                           ],
@@ -138,7 +138,7 @@ class OrderDetails extends StatelessWidget {
                   ),
                 ),
                 Visibility(
-                  visible: i == orderedFood.length - 1,
+                  visible: i == myCart.length - 1,
                   child: RequiredInfo(
                     defSizedBox: SizedBox(
                       height: MediaQuery.of(context).size.height * 0.01,

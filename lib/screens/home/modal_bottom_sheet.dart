@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../classes/food_class.dart';
-import '../../data/dummy_data.dart';
+import '../../classes/addon_class.dart';
+import '../../classes/choices_class.dart';
 import '../../widgets/custom_icon_btn.dart';
 
 class BottomPopUP extends StatefulWidget {
   final String foodName;
   final double foodPrice;
   final List<Addon> addons;
+  final List<Choice> choices;
   const BottomPopUP({
     Key? key,
     required this.foodName,
     required this.foodPrice,
     required this.addons,
+    required this.choices,
   }) : super(key: key);
 
   @override
@@ -64,9 +66,11 @@ class _BottomPopUPState extends State<BottomPopUP> {
               thumbVisibility: true,
               child: ListView.builder(
                 controller: scrollController,
-                itemCount: 5,
-                itemBuilder: (_, i) =>
-                    FoodChoiceListTile(choiceName: 'choice ${i + 1}'),
+                itemCount: widget.choices.length,
+                itemBuilder: (_, i) => FoodChoiceListTile(
+                  choiceName: widget.choices[i].choiceName,
+                  choiceoptions: widget.choices[i].choiceOptions,
+                ),
               ),
             ),
           ),
@@ -93,7 +97,7 @@ class _BottomPopUPState extends State<BottomPopUP> {
                     width: MediaQuery.of(context).size.width,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: addons.length,
+                      itemCount: widget.addons.length,
                       itemBuilder: (_, i) => Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -109,7 +113,7 @@ class _BottomPopUPState extends State<BottomPopUP> {
                           left: 10,
                         ),
                         child: Text(
-                          addons[i].addonName,
+                          widget.addons[i].addonName,
                           style: Theme.of(context).textTheme.bodyText1,
                         ),
                       ),
@@ -192,7 +196,6 @@ class _BottomPopUPState extends State<BottomPopUP> {
               ),
             ),
           )
-          // Addons
         ],
       ),
     );
@@ -202,9 +205,11 @@ class _BottomPopUPState extends State<BottomPopUP> {
 // food choice tile
 class FoodChoiceListTile extends StatelessWidget {
   final String choiceName;
+  final List<ChoiceOption> choiceoptions;
   const FoodChoiceListTile({
     Key? key,
     required this.choiceName,
+    required this.choiceoptions,
   }) : super(key: key);
 
   @override
@@ -215,6 +220,7 @@ class FoodChoiceListTile extends StatelessWidget {
         vertical: 10,
       ),
       margin: const EdgeInsets.all(7.5),
+      height: 210,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7.5),
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -229,44 +235,24 @@ class FoodChoiceListTile extends StatelessWidget {
                 ),
           ),
           const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'option 1',
-                style: Theme.of(context).textTheme.bodyText1,
+          Expanded(
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: choiceoptions.length,
+              itemBuilder: (_, i) => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '${choiceoptions[i].choiceOptionName} (\$${choiceoptions[i].choiceOptionPrice})',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                  Checkbox(
+                    value: false,
+                    onChanged: (x) {},
+                  ),
+                ],
               ),
-              Checkbox(
-                value: false,
-                onChanged: (x) {},
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'option 2',
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
-              Checkbox(
-                value: false,
-                onChanged: (x) {},
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'option 3',
-                style: Theme.of(context).textTheme.bodyText1,
-              ),
-              Checkbox(
-                value: false,
-                onChanged: (x) {},
-              ),
-            ],
+            ),
           ),
         ],
       ),

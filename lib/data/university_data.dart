@@ -1,4 +1,4 @@
-import '../classes/university.dart';
+import '../classes/university_class.dart';
 
 List<University> universityList = [
   University(

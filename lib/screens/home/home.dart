@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../data/dummy_data.dart';
+import '../../data/food_type_data.dart';
+import '../../data/food_data.dart';
+import '../cart/cart_screen.dart';
 import '../drawer.dart';
 import './main_menu.dart';
 import './sub_menu_builder.dart';
@@ -103,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 Navigator.of(context).pushNamed(CartScreen.routeName);
               },
-              icon: const Icon(Icons.backpack),
+              icon: const Icon(Icons.shopping_cart),
             ),
           ], */
         ),

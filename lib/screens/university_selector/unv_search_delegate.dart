@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../auth/auth_screen.dart';
-import '../../classes/university.dart';
+import '../../classes/university_class.dart';
 import '../../classes/abstract_search_delegate.dart';
 
 class UNVSearchDelegate extends AbstractPlatformSearchDelegate {
@@ -23,7 +23,7 @@ class UNVSearchDelegate extends AbstractPlatformSearchDelegate {
 
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-      icon: const Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back_rounded),
       onPressed: () {
         close(context, null);
       },

@@ -27,8 +27,8 @@ class _SubMenuBuilderState extends State<SubMenuBuilder>
 
   startAnimation() {
     animationController = BottomSheet.createAnimationController(this);
-    animationController.duration = const Duration(seconds: 2);
-    animationController.reverseDuration = const Duration(seconds: 1);
+    animationController.duration = const Duration(milliseconds: 750);
+    animationController.reverseDuration = const Duration(milliseconds: 500);
   }
 
   @override
@@ -80,6 +80,7 @@ class _SubMenuBuilderState extends State<SubMenuBuilder>
                         foodName: widget.submenu[i].foodName,
                         foodPrice: widget.submenu[i].foodPrice,
                         addons: widget.submenu[i].addOns,
+                        choices: widget.submenu[i].choices,
                       ),
                     );
                   },

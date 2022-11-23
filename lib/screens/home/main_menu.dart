@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../data/dummy_data.dart';
+import '../../data/food_type_data.dart';
 import '../../widgets/main_menu_tile.dart';
 import '../../widgets/stacked_menu_text.dart';
 

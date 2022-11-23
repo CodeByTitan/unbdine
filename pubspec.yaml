@@ -19,6 +19,7 @@ dependencies:
   lottie: ^1.4.3
   flutter_keyboard_visibility: ^5.4.0
   font_awesome_flutter: ^10.2.1
+  provider: ^6.0.4
   firebase_auth: any
   firebase_core: any
   firebase_auth_oauth: any
