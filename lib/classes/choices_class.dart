@@ -1,7 +1,7 @@
 class Choice {
   final String choiceID;
   final String choiceName;
-  final List<ChoiceOption> choiceOptions;
+  final List<ChoiceOptions> choiceOptions;
 
   Choice({
     required this.choiceID,
@@ -10,11 +10,12 @@ class Choice {
   });
 }
 
-class ChoiceOption {
+class ChoiceOptions {
   final String choiceOptionID;
   final String choiceOptionName;
   final double choiceOptionPrice;
-  ChoiceOption({
+
+  ChoiceOptions({
     required this.choiceOptionID,
     required this.choiceOptionName,
     required this.choiceOptionPrice,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'modal_bottom_sheet.dart';
 import '../../classes/food_class.dart';
 import '../../widgets/food_tile.dart';
@@ -77,6 +76,7 @@ class _SubMenuBuilderState extends State<SubMenuBuilder>
                           Theme.of(context).scaffoldBackgroundColor,
                       context: context,
                       builder: (context) => BottomPopUP(
+                        foodId: widget.submenu[i].foodID,
                         foodName: widget.submenu[i].foodName,
                         foodPrice: widget.submenu[i].foodPrice,
                         addons: widget.submenu[i].addOns,

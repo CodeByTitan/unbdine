@@ -1,4 +1,5 @@
 import './addon_class.dart';
+import './choices_class.dart';
 
 class MyCart {
   final String foodID;
@@ -7,6 +8,8 @@ class MyCart {
   final String foodImgUrl;
   final int quantity;
   final List<Addon> addons;
+  final List<ChoiceOptions> choices;
+
   MyCart({
     required this.foodID,
     required this.foodName,
@@ -14,5 +17,6 @@ class MyCart {
     required this.foodImgUrl,
     required this.quantity,
     required this.addons,
+    required this.choices,
   });
 }

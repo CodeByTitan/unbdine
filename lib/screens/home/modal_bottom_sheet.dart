@@ -4,12 +4,14 @@ import '../../classes/choices_class.dart';
 import '../../widgets/custom_icon_btn.dart';
 
 class BottomPopUP extends StatefulWidget {
+  final String foodId;
   final String foodName;
   final double foodPrice;
   final List<Addon> addons;
   final List<Choice> choices;
   const BottomPopUP({
     Key? key,
+    required this.foodId,
     required this.foodName,
     required this.foodPrice,
     required this.addons,
@@ -20,10 +22,10 @@ class BottomPopUP extends StatefulWidget {
   State<BottomPopUP> createState() => _BottomPopUPState();
 }
 
-int quantity = 1;
-
 class _BottomPopUPState extends State<BottomPopUP> {
   ScrollController scrollController = ScrollController();
+  int quantity = 1;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -67,9 +69,47 @@ class _BottomPopUPState extends State<BottomPopUP> {
               child: ListView.builder(
                 controller: scrollController,
                 itemCount: widget.choices.length,
-                itemBuilder: (_, i) => FoodChoiceListTile(
-                  choiceName: widget.choices[i].choiceName,
-                  choiceoptions: widget.choices[i].choiceOptions,
+                itemBuilder: (_, i) => Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 10,
+                  ),
+                  margin: const EdgeInsets.all(7.5),
+                  height: 175,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(7.5),
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          widget.choices[i].choiceName,
+                          style:
+                              Theme.of(context).textTheme.bodyText1!.copyWith(
+                                    fontSize: 18,
+                                  ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 5,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: widget.choices[i].choiceOptions.length,
+                          itemBuilder: (_, j) => ChoiceOptionRow(
+                            choiceOptionID: widget
+                                .choices[i].choiceOptions[j].choiceOptionID,
+                            choiceOptionName: widget
+                                .choices[i].choiceOptions[j].choiceOptionName,
+                            choiceOptionPrice: widget
+                                .choices[i].choiceOptions[j].choiceOptionPrice,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -98,24 +138,10 @@ class _BottomPopUPState extends State<BottomPopUP> {
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: widget.addons.length,
-                      itemBuilder: (_, i) => Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(),
-                        ),
-                        alignment: Alignment.center,
-                        height: 20,
-                        padding: const EdgeInsets.only(
-                          left: 20,
-                          right: 20,
-                        ),
-                        margin: const EdgeInsets.only(
-                          left: 10,
-                        ),
-                        child: Text(
-                          widget.addons[i].addonName,
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
+                      itemBuilder: (_, i) => AddonChip(
+                        addonID: widget.addons[i].addonID,
+                        addonName: widget.addons[i].addonName,
+                        addonPrice: widget.addons[i].addonPrice,
                       ),
                     ),
                   ),
@@ -188,6 +214,17 @@ class _BottomPopUPState extends State<BottomPopUP> {
                       buttonIcon: const Icon(Icons.add_shopping_cart),
                       bottomPadding: 0,
                       buttonFunction: () {
+                        /* myCart.add(
+                          MyCart(
+                            foodID: widget.foodId,
+                            foodName: widget.foodName,
+                            foodPrice: widget.foodPrice * quantity,
+                            foodImgUrl: 'foodImgUrl',
+                            quantity: quantity,
+                            addons: [],
+                            choices: [],
+                          ),
+                        ); */
                         Navigator.of(context).pop();
                       },
                     ),
@@ -202,59 +239,100 @@ class _BottomPopUPState extends State<BottomPopUP> {
   }
 }
 
-// food choice tile
-class FoodChoiceListTile extends StatelessWidget {
-  final String choiceName;
-  final List<ChoiceOption> choiceoptions;
-  const FoodChoiceListTile({
-    Key? key,
-    required this.choiceName,
-    required this.choiceoptions,
-  }) : super(key: key);
+class ChoiceOptionRow extends StatefulWidget {
+  final String choiceOptionID;
+  final String choiceOptionName;
+  final double choiceOptionPrice;
+  const ChoiceOptionRow({
+    super.key,
+    required this.choiceOptionID,
+    required this.choiceOptionName,
+    required this.choiceOptionPrice,
+  });
+
+  @override
+  State<ChoiceOptionRow> createState() => _ChoiceOptionRowState();
+}
+
+late bool choiceAdded;
+
+class _ChoiceOptionRowState extends State<ChoiceOptionRow> {
+  @override
+  void initState() {
+    choiceAdded = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10,
-      ),
-      margin: const EdgeInsets.all(7.5),
-      height: 210,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(7.5),
-        color: Theme.of(context).scaffoldBackgroundColor,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            choiceName,
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                  fontSize: 18,
-                ),
-          ),
-          const Divider(),
-          Expanded(
-            child: ListView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: choiceoptions.length,
-              itemBuilder: (_, i) => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '${choiceoptions[i].choiceOptionName} (\$${choiceoptions[i].choiceOptionPrice})',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  Checkbox(
-                    value: false,
-                    onChanged: (x) {},
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          '${widget.choiceOptionName} (\$${widget.choiceOptionPrice})',
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
+        Checkbox(
+          value: choiceAdded,
+          onChanged: (value) {
+            setState(() {
+              choiceAdded = value!;
+            });
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class AddonChip extends StatefulWidget {
+  final String addonID;
+  final String addonName;
+  final double addonPrice;
+  const AddonChip({
+    super.key,
+    required this.addonID,
+    required this.addonName,
+    required this.addonPrice,
+  });
+
+  @override
+  State<AddonChip> createState() => _AddonChipState();
+}
+
+late bool addonAdded;
+
+class _AddonChipState extends State<AddonChip> {
+  @override
+  void initState() {
+    addonAdded = false;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          addonAdded = !addonAdded;
+        });
+      },
+      child: Container(
+        width: 50,
+        margin: const EdgeInsets.only(
+          left: 10,
+        ),
+        padding: const EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(),
+          color: addonAdded ? Theme.of(context).primaryColor : null,
+        ),
+        alignment: Alignment.center,
+        child: Text(
+          widget.addonName,
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
       ),
     );
   }

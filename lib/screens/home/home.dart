@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 
 import '../../data/food_type_data.dart';
 import '../../data/food_data.dart';
-import '../cart/cart_screen.dart';
 import '../drawer.dart';
 import './main_menu.dart';
 import './sub_menu_builder.dart';

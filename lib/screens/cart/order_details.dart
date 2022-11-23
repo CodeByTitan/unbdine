@@ -86,7 +86,7 @@ class OrderDetails extends StatelessWidget {
                                 style: Theme.of(context).textTheme.bodyText1,
                               ),
                               Text(
-                                '\$ ${myCart[i].foodPrice}',
+                                '\$ ${(myCart[i].foodPrice).toStringAsFixed(2)}',
                                 style: Theme.of(context).textTheme.bodyText1,
                               ),
                             ],
