@@ -1,16 +1,2 @@
 # unbdine
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A try at creating startup product as a hybrid mobile application created for university students to order meals for pickup from the University Cafeteria while sitting in their classrooms. This app was built to solve the problem faced by many students in UNBSJ where students had to stand in long lines to order food.
